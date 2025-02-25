@@ -1,0 +1,15 @@
+*, 
+*:before, 
+*:after {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family: "Yeseva One";
+    font-size: 18px;
+    line-height: 23px;
+    color: #ffffff;
+}
+
