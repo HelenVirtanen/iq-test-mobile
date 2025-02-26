@@ -71,20 +71,27 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Burger button */
 .burger {
-    display: none;
     width: 24px;
-    padding: 10px 0;
+    height: 16px;
     position: absolute;
     top: 17px;
     left: 15px;
     z-index: 1;
-    font-size: 0;
-    color: transparent;
+    padding: 0;
     border: 0;
     background: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
+.burger img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/*
 .burger__line {
     display: block;
     width: 100%;
@@ -118,6 +125,7 @@ h1, h2, h3, h4, h5, h6, p {
 .burger__line:after {
     bottom: -5px;
 }
+*/
 
 /* Menu hidden */
 
