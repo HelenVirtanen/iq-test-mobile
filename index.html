@@ -10,10 +10,17 @@
     <title>Test IQ</title>
 </head>
 <body>
-    <!--Header -->
+<!--Header -->
     <header class="header">    
             <div class="container">
                 <div class="header__inner">
+                    <button class="burger">
+                        <img src="images/menu.png" alt="Бургер-меню" width="24" height="16">
+                    </button>
+                    <div class="header__img">
+                        <img src="images/header-brain.png" width="48" height="47" alt="Мозг">
+                    </div>
+                    <h2 class="header__title">Тест на определение IQ</h2>
                     <nav class="nav">
                         <ul class="nav-list">
                             <li class="nav-list__item">Главная</li>
@@ -21,11 +28,10 @@
                             <li class="nav-list__item">Пройти тест</li>
                         </ul>
                     </nav>
-                    <button class="burger">
-                        <img src="images/menu.png" alt="Бургер-меню" width="24" height="16">
-                    </button>
+                    
                     <button class="close hidden">✕</button>
                 </div>
+                
             </div>
 
             <!-- Menu screen -->
@@ -42,7 +48,7 @@
     </header>
 
 <!-- Main screen -->
-    
+    <main class="main-screen hidden">
     <!-- Intro -->
     <section class="intro">
         <div class="container">
@@ -100,8 +106,158 @@
             </div>
         </div>
     </section>
-
+</main>
 <!-- Main screen end-->
+
+<!-- Question screen -->
+<section class="questions active">
+    <div class="question-1 hidden">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h2 class="question__title">Ваш пол:</h2>
+        <form class="question__form">
+            <label class="question__label">
+                <input type="radio" name="gender" value="male" class="question__radio">
+                <span class="custom__label">Мужчина</span>
+            </label>
+
+            <label class="question__label">
+                <input type="radio" name="gender" value="female" class="question__radio">
+                <span class="custom__label">Женщина</span>
+            </label>
+        </form>
+        <button class="question__next-btn">Далее</button>
+    </div><!--/.question-1 -->
+
+    <div class="question-2 hidden">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h2 class="question__title">Укажите ваш возраст:</h2>
+        <form class="question__form">
+            <label class="question__label">
+                <input type="radio" name="age" value="18" class="question__radio">
+                <span class="custom__label">До 18</span>
+            </label>
+
+            <label class="question__label">
+                <input type="radio" name="age" value="18-28" class="question__radio">
+                <span class="custom__label">От 18 до 28</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="age" value="29-35" class="question__radio">
+                <span class="custom__label">От 29 до 35</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="age" value="36" class="question__radio">
+                <span class="custom__label">От 36</span>
+            </label>
+        </form>
+        <button class="question__next-btn">Далее</button>
+    </div><!--/. question-2 -->
+
+    <div class="question-3 hidden">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h2 class="question__title">Выберите лишнее:</h2>
+        <form class="question__form">
+            <label class="question__label">
+                <input type="radio" name="shelter" value="house" class="question__radio">
+                <span class="custom__label">Дом</span>
+            </label>
+
+            <label class="question__label">
+                <input type="radio" name="shelter" value="shelter" class="question__radio">
+                <span class="custom__label">Шалаш</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="shelter" value="bungalow" class="question__radio">
+                <span class="custom__label">Бунгало</span>
+            </label>
+            
+            <label class="question__label choosed">
+                <input type="radio" name="shelter" value="bench" class="question__radio" checked>
+                <span class="custom__label">Скамейка</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="shelter" value="hut" class="question__radio">
+                <span class="custom__label">Хижина</span>
+            </label>
+        </form>
+        <button class="question__next-btn active-btn">Далее</button>
+    </div><!--/. question-3 -->
+
+    
+    <div class="question-4 hidden">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h2 class="question__title">Продолжите числовой ряд:
+            18  20  24  32  </h2>
+        <form class="question__form">
+            <label class="question__label">
+                <input type="radio" name="number" value="62" class="question__radio">
+                <span class="custom__label">62</span>
+            </label>
+
+            <label class="question__label">
+                <input type="radio" name="number" value="48" class="question__radio">
+                <span class="custom__label">48</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="number" value="74" class="question__radio">
+                <span class="custom__label">74</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="number" value="57" class="question__radio">
+                <span class="custom__label">57</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="number" value="60" class="question__radio">
+                <span class="custom__label">60</span>
+            </label>
+            
+            <label class="question__label">
+                <input type="radio" name="number" value="77" class="question__radio">
+                <span class="custom__label">77</span>
+            </label>
+        </form>
+        <button class="question__next-btn">Далее</button>
+    </div><!--/. question-4 -->
+
+    <div class="question-5">
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+
+        <h2 class="question__title">Выберите цвет, который сейчас наиболее Вам приятен:</h2>
+        <div class="colors">
+            <div class="color__var default"></div>
+            <div class="color__var blue"></div>
+            <div class="color__var green"></div>
+            <div class="color__var red"></div>
+            <div class="color__var yellow"></div>
+            <div class="color__var brown"></div>
+            <div class="color__var black"></div>
+            <div class="color__var marsala"></div>
+            <div class="color__var sky-blue"></div>
+        </div>
+        <button class="question__next-btn">Далее</button>
+    </div><!--/. question-4 -->
+</section>
 
 
 
