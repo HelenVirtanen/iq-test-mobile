@@ -4,12 +4,231 @@
     box-sizing: border-box;
 }
 
-
 body {
     margin: 0;
     font-family: "Yeseva One";
     font-size: 18px;
-    line-height: 23px;
     color: #ffffff;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+.yellow-text {
+    color: #FFC700;
+}
+
+/* Header */
+.header {
+    padding: 17px 0 13px;
+    background-color: #181818;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* Navigation */
+.nav {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Roboto';
+    color: #fff;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Burger button */
+.burger {
+    display: none;
+    width: 24px;
+    padding: 10px 0;
+    position: absolute;
+    top: 17px;
+    left: 15px;
+    z-index: 1;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.burger__line {
+    display: block;
+    width: 100%;
+    height: 2.67px;
+    background-color: #696969;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transition: background .2slinear;
+}
+
+.burger__line:before, 
+.burger__line:after {
+    content: "";
+    width: 100%;
+    height: 2.67px;
+    background-color: #696969;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: transform .2slinear;
+}
+
+.burger__line:before {
+    top: -5px;
+}
+
+.burger__line:after {
+    bottom: -5px;
+}
+
+/* Intro */
+.intro {
+    width: 100%;
+    background: url(images/brain-bcg.png) no-repeat;
+    background-size: cover;
+}
+
+.intro__inner {
+    margin-top: 45px;
+    padding: 27px 0 11px;
+}
+
+.intro__offering {
+    font-family: 'PT Serif';
+    font-size: 18px;
+    line-height: 23.85px;
+    text-align: center;
+    margin-bottom: 15px;
+    letter-spacing: .9px;
+}
+
+.intro__test-pretitle,
+.intro__test-title {
+    font-family: 'Yeseva One', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 34.65px;
+    text-transform: uppercase;
+    color: #FFC700;
+    text-align: center;
+}
+
+.intro__test-title {
+    margin-bottom: 150px;
+}
+
+.intro__offering-reward {
+    margin: 22px auto 15px;
+    font-family: 'PT Serif';
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: .75px;
+}
+
+.intro__show-more__link {
+    margin: 0 auto;
+}
+
+.intro__show-more__link a {
+    display: block;
+    font-family: 'PT Serif';
+    font-size: 8px;
+    line-height: 10.6px;
+    letter-spacing: 0.4px;
+    color:#ffffff;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Button Begin test */
+.btn__begin-test {
+    display: block;
+    margin: 0 auto;
+    width: 189px;
+    padding: 13.05px 17.01px 10.25px;
+    background-color: #FFC700;
+    font-family: 'Merriweather';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.6px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #0D0C11;
+    border-radius: 20px;
+    border: none;
+}
+
+.circle {
+    position: relative;
+    margin: 0 auto 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.arrow {
+    position: absolute;
+    top: -34%;
+    left: 27%;
+    margin: 0 auto;
+}
+
+@media (max-width: 320px) {
+
+    .header {
+        padding: 23px 0;
+    }
+
+    .nav {
+        font-size: 16px;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #181818;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+
+}

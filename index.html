@@ -6,68 +6,80 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Yeseva+One&display=swap" rel="stylesheet">
     <title>Test IQ</title>
 </head>
 <body>
-    <header>
-        <!--Header menu -->
-        <div class="menu">
-            <div class="nav">
-                <ul class="nav-list">
-                    <li>Главная</li>
-                    <li>Информация о тесте</li>
-                    <li>Пройти тест</li>
-                </ul>
+    <!--Header -->
+    <header class="header">    
+            <div class="container">
+                <div class="header__inner">
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="nav-list__item">Главная</li>
+                            <li class="nav-list__item">Информация о тесте</li>
+                            <li class="nav-list__item">Пройти тест</li>
+                        </ul>
+                    </nav>
+                    <button class="burger">
+                        <span class="burger__line"></span>
+                    </button>
+                </div>
             </div>
-        </div>
     </header>
 
-        <!-- Main -->
-        <main>
-
-            <!-- Intro -->
-            <section class="intro">
-                <div class="container">
-                    <p class="intro__offering">Пройдите точный и быстрый</p>
-                    <h1 class="intro__test-pretitle">
-                    Тест на
-                    </h1>
-                    <h2 class="intro__test-title">определение IQ</h2>
-                    <button class="btn__begin-test">Пройти тест</button>
-                    <p class="intro__offering-reward">и получите рекомендации 
-                    по развитию своего интеллекта 
-                    и улучшению финансового благосостояния и личной жизни</p>
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro__inner">
+                <p class="intro__offering">Пройдите точный и быстрый</p>
+                <h1 class="intro__test-pretitle">
+                Тест на
+                </h1>
+                <h2 class="intro__test-title">определение<br>IQ</h2>
+                <button class="btn__begin-test">Пройти тест</button>
+                <p class="intro__offering-reward"><span class="yellow-text">И получите рекомендации<br>
+                по развитию своего интеллекта</span><br>
+                и улучшению финансового благосостояния и личной жизни</p>
+                <div class="intro__show-more">
+                    <div class="circle">
+                        <div class="arrow">
+                            <img src="images/arrow.svg">
+                        </div>
+                    </div>
+                    <div class="intro__show-more__link">
+                        <a href="#">Подробнее</a>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Description -->
-            <section class="description">
-                <div class="container">
-                    <p class="description__content">Профессиональный IQ-тест позволяет не только определить коэффициент вашего интеллекта, но и выработать список рекомендаций для повышения этого показателя.</p>
-                </div>
-            </section>
-
-             <!-- Benefits -->
-              <section class="benefits">
-                <div class="container">
-                    <p class="benefits__content">Также по результатам теста
-                        вы получите подробные советы по определению наиболее перспективной для вашего типа интеллекта сферы деятельности, которая принесет вам скорейший финансовый результат.
-                        </p>
-                    <img src="images/hemispheres.png" alt="Два полушария">
-                    <button class="btn__begin-test">Пройти тест</button>
-                </div>
-              </section>
-
-              <!-- Time -->
-               <section class="timing">
-                <div class="container">
-                    <p class="timing__content">Прохождение теста займет у вас не более 12 минут, а его результаты вы сможете использовать всю жизнь.</p>
-                    <p class="timing__results">Профессиональная интерпретация и детально проработанные рекомендации позволят вам качественно изменить все аспекты своей жизни: от финансового до любовного.</p>
-                    <button class="btn__begin-test">Пройти тест</button>
-                </div>
-               </section>
-        </main>
+    <!-- Description -->
+    <section class="description">
+        <div class="container">
+            <p class="description__content">Профессиональный IQ-тест позволяет не только определить коэффициент вашего интеллекта, но и выработать список рекомендаций для повышения этого показателя.</p>
+        </div>
+    </section
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <p class="benefits__content">Также по результатам теста
+                вы получите подробные советы по определению наиболее перспективной для вашего типа интеллекта сферы деятельности, которая принесет вам скорейший финансовый результат.
+                </p>
+            <img src="images/hemispheres.png" width="232" height="180" alt="Два полушария">
+            <button class="btn__begin-test">Пройти тест</button>
+        </div>
+    </section>
+    
+    <!-- Time -->
+    <section class="timing">
+        <div class="container">
+            <p class="timing__content">Прохождение теста займет у вас не более 12 минут, а его результаты вы сможете использовать всю жизнь.</p>
+            <p class="timing__results">Профессиональная интерпретация и детально проработанные рекомендации позволят вам качественно изменить все аспекты своей жизни: от финансового до любовного.</p>
+            <button class="btn__begin-test">Пройти тест</button>
+        </div>
+    </section>
 
 
 </body>
