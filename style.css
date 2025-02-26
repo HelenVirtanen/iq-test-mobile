@@ -19,6 +19,10 @@ h1, h2, h3, h4, h5, h6, p {
     color: #FFC700;
 }
 
+.big-letters {
+    text-transform: uppercase;
+}
+
 /* Header */
 .header {
     padding: 17px 0 13px;
@@ -117,7 +121,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* Intro */
 .intro {
     width: 100%;
-    background: url(images/brain-bcg.png) no-repeat;
+    background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -205,6 +209,43 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     top: -34%;
     left: 27%;
+    margin: 0 auto;
+}
+
+/* Description */
+.description {
+    width: 100%;
+    background: url(images/blue-sky.jpg) no-repeat;
+    background-color: radial-gradient(#2950C2, #265BC7F5 96%, #2762BB00 0%);
+    background-size: cover;
+}
+
+.description__content {
+    padding: 83px 0 56px;
+    margin: 0 36px;
+    font-family: 'Yeseva One';
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    text-align: center;
+}
+
+
+/* Benefits */
+.benefits {
+    padding: 40px 0;
+}
+
+.benefits__content {
+    font-family: 'PT Serif';
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.8px;
+    color: #272727;
+    margin-bottom: 35px;
+}
+
+.benefits__illustration img {
+    display: flex;
     margin: 0 auto;
 }
 
