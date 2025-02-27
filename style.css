@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* Container */
 .container {
     width: 100%;
-    max-width: 1230px;
+    min-width: 320px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -410,6 +410,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Questions */
 .questions {
+    min-width: 320px;
+    min-height: 568px;
     width: 100%;
     height: 100%;
     background: linear-gradient(
@@ -810,6 +812,101 @@ h1, h2, h3, h4, h5, h6, p {
 .choice-button:hover {
     outline: 6px solid rgba(255, 199, 0, 1);
     outline-offset: -6px;
+}
+
+
+/* Results */
+.results {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        rgba(13, 12, 17, 0.73), 
+        rgba(13, 12, 17, 0.73)), 
+        url(images/dark-sky.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-processing {
+    min-height: 568px;
+    width: 100%;
+    height: 100%; 
+}
+
+.results .progress {
+    margin-bottom: 49px;
+}
+
+.results .progress-bar {
+    width: 100%;
+}
+
+.results-processing__title {
+    margin: 0 auto 31px;
+    padding: 0 42px;
+    font-family: 'PT serif';
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 30.47px;
+    letter-spacing: 1.15px;
+    text-align: center;
+}
+
+/* Loader */
+
+.results-processing__loader {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(70deg);
+}
+
+.results-processing__loader span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: rotate(calc(var(--i) * 360deg / 11));
+}
+
+.results-processing__loader span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background: rgba(59, 222, 124, 1);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: circle-animation 3.3s linear infinite;
+    animation-delay: calc(-0.3s * var(--i));
+}
+
+@keyframes circle-animation{
+    0% {
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    80%, 100% {
+        transform: scale(0);
+    }
+}
+
+.results-processing__comment {
+    margin-top: 28px;
+    padding: 0 22px;
+    font-family: 'PT Serif';
+    font-size: 14px;
+    line-height: 18.55px;
+    letter-spacing: 0.7px;
 }
 
 /* Adaptive */
