@@ -458,7 +458,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .question-6 .progress,
-.question-8 .progress {
+.question-8 .progress,
+.question-10 .progress {
     margin-bottom: 17px;
 }
 
@@ -509,6 +510,10 @@ h1, h2, h3, h4, h5, h6, p {
     width: 150px; /*57.6%*/
 }
 
+.question-10 .progress-bar {
+    width: 171px; /*65.76%*/
+}
+
 /* Question title */
 
 .question__title {
@@ -535,7 +540,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .question-5 .question__title,
-.question-6 .question__title {
+.question-6 .question__title,
+.question-10 .question__title {
     margin-bottom: 20px;
 }
 
@@ -551,7 +557,7 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.95px;
 }
 
-.question-8 .question__title{
+.question-8 .question__title {
     padding: 0 15px;
     font-size: 18px;
     line-height: 23.85px;
@@ -564,6 +570,12 @@ h1, h2, h3, h4, h5, h6, p {
 .question-5 .question__title,
 .question-6 .question__title{
     line-height: 23px;
+}
+
+.question-10 .question__title {
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 21.2px;
 }
 
 
@@ -618,6 +630,10 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 20px;
 }
 
+.question-10 .question__label:last-child {
+    font-size: 16px;
+}
+
 .question__radio {
     display: none;
     margin-right: 39px; 
@@ -644,8 +660,12 @@ h1, h2, h3, h4, h5, h6, p {
     margin-right: 30px;
     flex-shrink: 0;
 }
-.custom__label::before {
+.question-9 .custom__label::before {
     margin-right: 15px;
+}
+
+.question-10 .custom__label::before {
+    margin-right: 28px;
 }
 
 .question__radio:checked + .custom__label::before {
@@ -741,6 +761,10 @@ h1, h2, h3, h4, h5, h6, p {
 .question__picture img {
     display: block;
     margin: 0 auto 25px;
+}
+
+.question-10 .question__picture img {
+    margin-bottom: 20px;
 }
 
 /* Choice buttons */
