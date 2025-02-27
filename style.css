@@ -471,6 +471,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 44px;
 }
 
+.question-11 .progress {
+    margin-bottom: 33px;
+}
+
 .progress-bar {
     width: 16px; /*6.15 %*/
     height: 11px;
@@ -514,6 +518,10 @@ h1, h2, h3, h4, h5, h6, p {
     width: 171px; /*65.76%*/
 }
 
+.question-11 .progress-bar {
+    width: 194px; /*74.6%*/
+}
+
 /* Question title */
 
 .question__title {
@@ -541,7 +549,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 .question-5 .question__title,
 .question-6 .question__title,
-.question-10 .question__title {
+.question-10 .question__title,
+.question-11 .question__title {
     margin-bottom: 20px;
 }
 
@@ -721,7 +730,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .color__var:hover {
-    outline: 6px solid rgba(255, 199, 0, 1); /* Рамка при наведении */
+    outline: 6px solid rgba(255, 199, 0, 1);
     outline-offset: -3px;
 }
 
@@ -767,6 +776,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 20px;
 }
 
+.question-11 .question__picture img {
+    margin-bottom: 47px;
+}
+
 /* Choice buttons */
 .button-container {
     display: flex;
@@ -775,6 +788,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 35px;
 }
 
+.question-11 .button-container {
+    padding: 0 17px;
+    margin-bottom: 30px;
+}
+    
 .choice-button {
     display: flex;
     justify-content: center;
@@ -787,11 +805,11 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 400;
     font-size: 20px;
     color: rgba(13, 12, 17, 1);
-    transition: background .2s linear; 
 }
 
 .choice-button:hover {
-    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 199, 0, 1) 0%, rgba(255, 199, 0, 1) 100%);
+    outline: 6px solid rgba(255, 199, 0, 1);
+    outline-offset: -6px;
 }
 
 /* Adaptive */
