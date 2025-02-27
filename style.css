@@ -34,6 +34,8 @@ h1, h2, h3, h4, h5, h6, p {
 /* Header */
 .header {
     display: fixed;
+    max-width: 2030px;
+    width: 100%;
     background-color: #181818;
     position: absolute;
     top: 0;
@@ -49,6 +51,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Container */
 .container {
+    max-width: 2030px;
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
@@ -76,12 +79,14 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Navigation */
 .nav {
-    width: 100%;
+    display: none;
+    width: 60%;
     text-transform: uppercase;
     font-size: 16px;
     line-height: 22px;
     font-family: 'Roboto';
     color: #fff;
+    margin-left: auto;
 }
 
 .nav-list {
@@ -90,8 +95,12 @@ h1, h2, h3, h4, h5, h6, p {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }
 
+.nav-list__item {
+    margin-right: 20px; 
+}
 
 /* Burger button */
 .burger {
@@ -194,9 +203,11 @@ h1, h2, h3, h4, h5, h6, p {
 /* Intro */
 .intro {
     width: 100%;
+    max-width: 2030px;
     min-height: 523px;
     background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
+    margin: 0 auto;
 }
 
 .intro__inner {
@@ -419,6 +430,7 @@ h1, h2, h3, h4, h5, h6, p {
         url(images/dark-sky.jpg) no-repeat;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding-top: 46px;
@@ -618,9 +630,7 @@ h1, h2, h3, h4, h5, h6, p {
 .question__label {
     display: flex;
     width: 100%;
-    height: 50px;
     margin: 0 auto;
-    padding-left: 35px;
     align-items: center;
     font-family: 'PT Serif';
     font-size: 18px;
@@ -629,15 +639,6 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: rgb(242, 243, 243, 0.2);
     border: 1px solid transparent;
     transition: all 0.3s ease;
-}
-
-.question-7 .question__label {
-    height: 40px;
-}
-
-.question-9 .question__label {
-    height: 78px;
-    line-height: 20px;
 }
 
 .question-10 .question__label:last-child {
@@ -657,6 +658,20 @@ h1, h2, h3, h4, h5, h6, p {
 .custom__label {
     display: flex;
     align-items: center;
+    padding-left: 35px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.question-7 .custom__label {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.question-9 .custom__label {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    line-height: 20px;
 }
 
 .custom__label::before {
@@ -669,6 +684,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: transparent;
     margin-right: 30px;
     flex-shrink: 0;
+    transition: background-color 200ms ease-in;
 }
 .question-9 .custom__label::before {
     margin-right: 15px;
@@ -716,11 +732,12 @@ h1, h2, h3, h4, h5, h6, p {
 .colors {
     display: grid;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fill, 75px);
+    grid-template-columns: repeat(3, 75px);
     column-gap: 21px;
     row-gap: 24px;
     padding: 0 25px;
     margin-bottom: 34px;
+    justify-content: center;
 }
 
 .color__var {
@@ -900,7 +917,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .results-processing__comment {
-    margin-top: 28px;
+    margin: 28px auto 0;
     padding: 0 22px;
     font-family: 'PT Serif';
     font-size: 14px;
@@ -908,20 +925,167 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.7px;
 }
 
-/* Adaptive */
+/* Ready results */
 
-@media (max-width: 480px) {
+.ready {
+    background: url(images/dark-sky-ready.png) no-repeat;
+    background-size: cover;
+}
+
+.header__title_ready {
+    font-family: 'Yeseva One';
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.1px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #FFC700;
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 15px;
+}
+
+.ready__title {
+    font-family: 'PT Serif';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding-top: 30px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.ready__content {
+    margin: 0 auto 10px;
+    padding: 0 23px;
+    font-family: 'PT Serif';
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.ready__offer {
+    font-family: 'PT Serif';
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgba(59, 222, 124, 1);
+    letter-spacing: 1.8px;
+    padding: 0 23px;
+    font-weight: 700;
+}
+
+.personal-data {
+    width: 256px;
+    height: 114px;
+    margin: 0 auto;
+    background-color: rgba(28, 39, 65, 1);
+    border-radius: 6px;
+}
+
+.personal-data__content {
+    padding: 15px 12px 11px;
+    font-family: 'Roboto';
+    font-size: 8px;
+    line-height: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.call__content {
+    font-family: 'PT Serif';
+    font-size: 11px;
+    line-height: 30px;
+    text-align: center;
+    color: rgba(59, 222, 124, 1);
+    letter-spacing: 1.8px;
+}
+
+.call__period {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.call-btn {
+    margin: 0 auto 142px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 290px;
+    height: 92px;
+    background-color: rgba(235, 27, 0, 1);
+    border-radius: 5px;
+    border: none;
+}
+
+.call-btn__icon {
+    width: 29px;
+    height: 29px;
+    margin-left: 15px;
+    margin-right: 18px;
+}
+
+.call-btn__text {
+    margin-right: 22px; 
+    font-weight: 700;
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 17.58px;
+    letter-spacing: 0.75px;
+    color: #fff;
+    text-align: left;
+}
+
+.ready__footer {
+    padding: 0 13px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 7px;
+    line-height: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    max-height: calc(9px * 2);
+    overflow: auto;
+    white-space: normal; 
+}
+
+
+/* Adaptive */
+@media (min-width: 1024px) {
+    .header {
+    display: block;
+    }
+
+    .intro {
+        background: url(images/brain-bcg.jpg) 50% 28% no-repeat;
+        background-color: #181818;
+        background-size: 100%;
+        min-height: 723px;
+    }
+
+
+} 
+
+
+@media (min-width: 480px) {
 
     .header {
         display: fixed;
     }
 
     .nav {
+        display: flex;
         font-size: 16px;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
+        width: 40%;
         background-color: #181818;
     }
 

@@ -20,7 +20,8 @@
                     <div class="header__img">
                         <img src="images/header-brain.png" width="48" height="47" alt="Мозг">
                     </div>
-                    <h2 class="header__title">Тест на определение IQ</h2>
+                    <h2 class="header__title hidden">Тест на определение IQ</h2>
+                    <h2 class="header__title_ready">Готово!</h2>
                     <nav class="nav">
                         <ul class="nav-list">
                             <li class="nav-list__item">Главная</li>
@@ -409,9 +410,9 @@
     </div><!--/. question-11 -->
 </section>
 
-<!-- Results screen -->
-<section class="results active">
-    <div class="results-processing">
+<!-- Results processing screen -->
+<section class="results active hidden">
+    <div class="results-processing hidden">
         <div class="progress">
             <div class="progress-bar"></div>
         </div>
@@ -437,6 +438,36 @@
     </div><!--/. results-processing -->
 </section>
 
+<!-- Ready results screen -->
+<section class="ready">
+    <div class="ready__title">
+        Ваш результат рассчитан:
+    </div>
+    <div class="ready__content">
+        Вы относитесь к 3% респондентов, чей уровень интеллекта более чем на 15 пунктов отличается от среднего в большую или меньшую сторону!
+    </div>
+    <h3 class="ready__offer">
+        Скорее получите свой результат!
+    </h3>
+    <div class="personal-data">
+        <p class="personal-data__content">
+        В целях защиты персональных данных результат теста, их подробная интерпретация и рекомендации доступны в виде голосового сообщения по звонку с вашего мобильного телефона</p>
+    </div>
+
+    <div class="call">
+        <p class="call__content">Звоните скорее, запись доступна всего
+        <span class="call__period">10:00</span> минут</p> 
+    </div>
+
+    <button class="call-btn">
+            <img class="call-btn__icon" src="images/call.svg" width="29" height="29">
+            <p class="call-btn__text">Позвонить и прослушать результат</p>
+    </button>
+
+    <div class="ready__footer">
+        TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI
+    </div>
+</section>
 
 
 
