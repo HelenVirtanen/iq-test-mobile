@@ -1,3 +1,5 @@
+/* General Styles */
+
 *, 
 *:before, 
 *:after {
@@ -28,8 +30,10 @@ h1, h2, h3, h4, h5, h6, p {
     display: none;
 }
 
+
 /* Header */
 .header {
+    display: fixed;
     background-color: #181818;
     position: absolute;
     top: 0;
@@ -64,6 +68,10 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.6px;
     color: #FFC700;
     text-align: center;
+}
+
+.header__img {
+    margin: 0 9px;
 }
 
 
@@ -106,9 +114,6 @@ h1, h2, h3, h4, h5, h6, p {
     display: block;
 }
 
-.header__img {
-    margin: 0 9px;
-}
 
 /* Menu hidden */
 
@@ -168,6 +173,7 @@ h1, h2, h3, h4, h5, h6, p {
     transform: rotate(-45deg);
 }
 
+/* Close button */
 .close.active {
     display: block;
     position: absolute;
@@ -264,6 +270,8 @@ h1, h2, h3, h4, h5, h6, p {
     border: none;
 }
 
+
+/* Show more arrow */
 .circle {
     position: relative;
     margin: 0 auto 3px;
@@ -418,11 +426,16 @@ h1, h2, h3, h4, h5, h6, p {
 .question-1,
 .question-2,
 .question-3,
-.question-4 {
+.question-4,
+.question-5,
+.question-6,
+.question-7,
+.question-8 {
     width: 100%;
     height: 100%;
 }
 
+/* Progress part */
 .progress {
     width: 260px;
     height: 11px;
@@ -444,8 +457,17 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 28px;
 }
 
-.question-6 .progress {
+.question-6 .progress,
+.question-8 .progress {
     margin-bottom: 17px;
+}
+
+.question-7 .progress {
+    margin-bottom: 37px;
+}
+
+.question-9 .progress {
+    margin-bottom: 44px;
 }
 
 .progress-bar {
@@ -475,6 +497,20 @@ h1, h2, h3, h4, h5, h6, p {
     width: 103px; /*39.6%*/
 }
 
+.question-7 .progress-bar {
+    width: 128px; /*49.2%*/
+}
+
+.question-8 .progress-bar {
+    width: 145px; /*55.7%*/
+}
+
+.question-9 .progress-bar {
+    width: 150px; /*57.6%*/
+}
+
+/* Question title */
+
 .question__title {
     padding: 0 20px;
     font-family: 'PT serif';
@@ -503,11 +539,23 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 20px;
 }
 
+.question-7 .question__title {
+    margin-bottom: 25px;
+}
+
 .question-4 .question__title,
 .question-5 .question__title,
-.question-6 .question__title{
+.question-6 .question__title,
+.question-9 .question__title {
     font-size: 19px;
     letter-spacing: 0.95px;
+}
+
+.question-8 .question__title{
+    padding: 0 15px;
+    font-size: 18px;
+    line-height: 23.85px;
+    margin-bottom: 23px;
 }
 
 .question-4 .question__title {
@@ -518,6 +566,8 @@ h1, h2, h3, h4, h5, h6, p {
     line-height: 23px;
 }
 
+
+/* Question form with radio buttons */ 
 .question__form {
     display: flex;
     flex-direction: column;
@@ -533,8 +583,14 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 33px;
 }
 
-.question-4 .question__form {
+.question-4 .question__form,
+.question-7 .question__form  {
     margin-bottom: 29px;
+}
+
+.question-9 .question__form  {
+    gap: 19px;
+    margin-bottom: 50px;
 }
 
 .question__label {
@@ -546,16 +602,25 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
     font-family: 'PT Serif';
     font-size: 18px;
+    letter-spacing: 0.9px;
     cursor: pointer;
     background-color: rgb(242, 243, 243, 0.2);
     border: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
+.question-7 .question__label {
+    height: 40px;
+}
+
+.question-9 .question__label {
+    height: 78px;
+    line-height: 20px;
+}
+
 .question__radio {
     display: none;
     margin-right: 39px; 
-    accent-color: #FFC700; 
 }
 
 .question__label.choosed {
@@ -577,6 +642,10 @@ h1, h2, h3, h4, h5, h6, p {
     border: 1px solid #fff;
     background-color: transparent;
     margin-right: 30px;
+    flex-shrink: 0;
+}
+.custom__label::before {
+    margin-right: 15px;
 }
 
 .question__radio:checked + .custom__label::before {
@@ -610,6 +679,9 @@ h1, h2, h3, h4, h5, h6, p {
     background: radial-gradient(50% 50% at 50% 50%, rgba(255, 199, 0, 1) 0%, rgba(255, 199, 0, 1) 100%);
     color:rgb(13, 12, 17);
 }
+
+
+/* Question choose color */
 
 .colors {
     display: grid;
@@ -664,6 +736,41 @@ h1, h2, h3, h4, h5, h6, p {
 .color__var.sky-blue{
     background-color: rgba(70, 178, 172, 1);
 }
+
+/* Question picture */
+.question__picture img {
+    display: block;
+    margin: 0 auto 25px;
+}
+
+/* Choice buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 35px;
+    margin-bottom: 35px;
+}
+
+.choice-button {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 41px;
+    height: 41px;
+    background-color: #fff;
+    text-align: center;
+    font-family: 'PT Serif';
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(13, 12, 17, 1);
+    transition: background .2s linear; 
+}
+
+.choice-button:hover {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255, 199, 0, 1) 0%, rgba(255, 199, 0, 1) 100%);
+}
+
+/* Adaptive */
 
 @media (max-width: 480px) {
 
