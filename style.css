@@ -320,6 +320,8 @@ h1, h2, h3, h4, h5, h6, p {
 .benefits__illustration img {
     display: flex;
     margin: 0 auto;
+    width: 232px;
+    height: 180px;
 }
 
 .benefits .btn__begin-test {
@@ -1058,102 +1060,20 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 /* Adaptive */
-@media (min-width: 1024px) {
-    .header {
-    display: block;
-    }
 
+@media (min-width: 375px) {
     .intro {
-        background: url(images/brain-bcg.jpg) 63% 30% no-repeat;
-        background-color: #181818;
-        background-size: 100%;
+    background: url(images/brain-bcg.jpg) 50% 32% no-repeat;
+    background-size: cover;
     }
-
-    .progress {
-        width: 600px;
-        height: 16px; 
-        margin: 25px auto 150px;
-        border-radius: 14px; 
-    }
-
-    .progress-bar {
-        height: 16px;
-        border-radius: 14px;
-    }
-} 
-
-@media (min-width: 990px) {
-    .intro {
-        background: url(images/brain-bcg.jpg) 50% 31% no-repeat;
-        background-color: #181818;
-        background-size: 100%;
-    }
-
-    .intro__test-title {
-        margin-bottom: 390px;
-    }
-
-    .colors {
-        grid-template-columns: repeat(3, 125px);
-
-    }
-
-    .color__var {
-        width: 125px;
-        height: 125px;
-    }
-    
 }
 
-
-@media (min-width: 768px) {
-    .container {
-        max-width: 700px;
-    }
-
-    .menu__item a {
-        font-size: 18px;
-    }
-
-    .header__title,
-    .header__img {
-        opacity: 1;
-    }
-    
-    .intro {
-        background: url(images/brain-bcg.jpg) 50% 30% no-repeat;
-        background-color: #181818;
-        background-size: 100%;
-    }
-
-    .intro__test-title {
-        font-size: 40px;
-        line-height: 46.65px;
-        margin-bottom: 305px;
-        padding: 0 95px
-    }
-
-    .intro__offering-reward {
-        margin: 24px auto 20px;
-        font-size: 18px;
-        letter-spacing: 1.5px;
-        width: 60%;
-    }
-
-    .question__label {
-        width: 70%;
-    }
-
-    .progress {
-        width: 400px; 
-        height: 14px; 
-        margin: 20px auto 120px;
-        border-radius: 12px;
-    }
-
-    .progress-bar {
-        height: 14px; 
-        border-radius: 12px;
+@media (max-width: 480px) {
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
     }
 }
 
@@ -1190,11 +1110,110 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-@media (max-width: 480px) {
-    .menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 700px;
+    }
+
+    .menu__item a {
+        font-size: 18px;
+    }
+
+    .header__title,
+    .header__img {
+        opacity: 1;
+    }
+    
+
+    .intro {
+        background: url(images/big-brain.png) 47% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
+        background-color: #181818;
+        background-size: 50%, 100%;
+    }
+
+    .intro__test-title {
+        font-size: 40px;
+        line-height: 46.65px;
+        margin-bottom: 305px;
+        padding: 0 95px
+    }
+
+    .intro__offering-reward {
+        margin: 24px auto 20px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        width: 60%;
+    }
+
+    .benefits__illustration img {
+        width: 50%;
+        height: auto;
+    }
+
+
+    .question__label {
+        width: 70%;
+    }
+
+    .progress {
+        width: 400px; 
+        height: 14px; 
+        margin: 20px auto 120px;
+        border-radius: 12px;
+    }
+
+    .progress-bar {
+        height: 14px; 
+        border-radius: 12px;
     }
 }
+
+@media (min-width: 990px) {
+
+    .intro__test-title {
+        margin-bottom: 390px;
+    }
+
+    .colors {
+        grid-template-columns: repeat(3, 125px);
+
+    }
+
+    .color__var {
+        width: 125px;
+        height: 125px;
+    }
+    
+}
+
+
+@media (min-width: 1024px) {
+    .header {
+    display: block;
+    }
+
+    .intro {
+        background: url(images/big-brain.png) 48% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
+        background-color: #181818;
+        background-size: 38%, 100%;
+    }
+
+    .progress {
+        width: 600px;
+        height: 16px; 
+        margin: 25px auto 150px;
+        border-radius: 14px; 
+    }
+
+    .progress-bar {
+        height: 16px;
+        border-radius: 14px;
+    }
+} 
+
+
+
+
+
+
