@@ -950,6 +950,7 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 1.8px;
     padding: 0 23px;
     font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .personal-data {
@@ -958,6 +959,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0 auto;
     background-color: rgba(28, 39, 65, 1);
     border-radius: 6px;
+    margin-bottom: 2px;
 }
 
 .personal-data__content {
@@ -968,7 +970,6 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 2px;
 }
 
 .call__content {
@@ -978,6 +979,11 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
     color: rgba(59, 222, 124, 1);
     letter-spacing: 1.8px;
+}
+
+.call__content:last-child {
+    line-height: 10px;
+    margin-bottom: 10px;
 }
 
 .call__period {
