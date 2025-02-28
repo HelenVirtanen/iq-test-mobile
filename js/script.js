@@ -28,9 +28,15 @@ toggleButtons(false);
 
 
 // Open menu links
-const menuMain = document.getElementById("menu-main");
-const menuInfo = document.getElementById("menu-info");
-const menuStartTest = document.getElementById("menu-begin-test");
+const menuLinks = document.querySelectorAll(".menu__item");
+
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        menu.classList.add('hidden');
+    });
+});
+
+
 
 const mainSection = document.getElementById("main-screen");
 const introSection = document.getElementById("intro");
@@ -41,7 +47,7 @@ const headerTitle= document.querySelector(".header__title");
 const headerTitleReady = document.querySelector(".header__title_ready");
 
 // Start test 
-const startTestButtons = document.querySelectorAll(".btn__begin-test, #menu-begin-test, #nav-begin-test");
+const startTestButtons = document.querySelectorAll(".btn__begin-test, #menu-begin-test");
 
 startTestButtons.forEach(button => {
     if (button.textContent.trim() === "Пройти тест") {

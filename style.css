@@ -1,4 +1,7 @@
 /* General Styles */
+html {
+    scroll-behavior: smooth;
+}
 
 *, 
 *:before, 
@@ -125,6 +128,11 @@ h1, h2, h3, h4, h5, h6, p {
     transition: color .1s linear;
     margin-left: 23px;
     margin-bottom: 27px;
+}
+
+.menu__item a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .menu__item:last-child {
@@ -354,6 +362,12 @@ h1, h2, h3, h4, h5, h6, p {
     border: 1px solid #fff;
     color: #fff;
     margin-bottom: 45px;
+    transition: border-color .1s linear, color .1s linear;
+}
+
+.btn__begin-test_transparent:hover {
+    border-color: #F4CE0C;
+    color: #F4CE0C;
 }
 
 .timing__footer {
