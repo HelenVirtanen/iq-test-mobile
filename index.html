@@ -14,44 +14,30 @@
     <header class="header">    
             <div class="container">
                 <div class="header__inner">
-                    <button class="burger">
+                    <button class="burger" id="burger-btn">
                         <img src="images/menu.png" alt="Бургер-меню" width="24" height="16">
                     </button>
                     <div class="header__img">
                         <img src="images/header-brain.png" width="48" height="47" alt="Мозг">
                     </div>
-                    <h2 class="header__title hidden">Тест на определение IQ</h2>
-                    <h2 class="header__title_ready">Готово!</h2>
-                    <nav class="nav">
-                        <ul class="nav-list">
-                            <li class="nav-list__item">Главная</li>
-                            <li class="nav-list__item">Информация о тесте</li>
-                            <li class="nav-list__item">Пройти тест</li>
+                    <h2 class="header__title">Тест на определение IQ</h2>
+                    <h2 class="header__title_ready hidden">Готово!</h2>
+                    <nav class="menu hidden" id="menu">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="#main-screen">Главная</a></li>
+                            <li class="menu__item"><a href="#intro">Информация о тесте</a></li>
+                            <li class="menu__item"><a href="#timing">Пройти тест</a></li>
                         </ul>
                     </nav>
-                    
-                    <button class="close hidden">✕</button>
+                    <button class="close hidden" id="close-btn">✕</button>
                 </div>
-                
             </div>
-
-            <!-- Menu screen -->
-
-            <div class="menu hidden">
-                <ul class="menu__list hidden">
-                    <li class="menu__item">Главная</li>
-                    <li class="menu__item">Информация о тесте</li>
-                    <li class="menu__item">Пройти тест</li>
-                </ul>
-            </div>
-
-            <!-- Menu screen end -->
     </header>
 
 <!-- Main screen -->
-    <main class="main-screen hidden">
+    <main class="main-screen" id="main-screen">
     <!-- Intro -->
-    <section class="intro">
+    <section class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
                 <p class="intro__offering">Пройдите точный и быстрый</p>
@@ -97,7 +83,7 @@
     </section>
 
     <!-- Timing -->
-    <section class="timing">
+    <section class="timing" id="timing">
         <div class="container">
             <p class="timing__content">Прохождение теста займет у вас не более <span class="yellow-text">12 минут</span>, а его результаты вы сможете <span class="yellow-text">использовать всю жизнь.</span></p>
             <p class="timing__results">Профессиональная интерпретация и детально проработанные рекомендации позволят вам качественно изменить все аспекты своей жизни: от финансового до любовного.</p>
@@ -111,7 +97,7 @@
 
 <!-- Question screen -->
 <section class="questions hidden">
-    <div class="question-1 hidden">
+    <div class="question-1 hidden" id="question-1">
         <div class="progress">
             <div class="progress-bar"></div>
         </div>
@@ -128,7 +114,7 @@
                 <span class="custom__label">Женщина</span>
             </label>
         </form>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/.question-1 -->
 
     <div class="question-2 hidden">
@@ -158,7 +144,7 @@
                 <span class="custom__label">От 36</span>
             </label>
         </form>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-2 -->
 
     <div class="question-3 hidden">
@@ -183,8 +169,8 @@
                 <span class="custom__label">Бунгало</span>
             </label>
             
-            <label class="question__label choosed">
-                <input type="radio" name="shelter" value="bench" class="question__radio" checked>
+            <label class="question__label">
+                <input type="radio" name="shelter" value="bench" class="question__radio">
                 <span class="custom__label">Скамейка</span>
             </label>
             
@@ -193,7 +179,7 @@
                 <span class="custom__label">Хижина</span>
             </label>
         </form>
-        <button class="question__next-btn active-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-3 -->
     
     <div class="question-4 hidden">
@@ -234,7 +220,7 @@
                 <span class="custom__label">77</span>
             </label>
         </form>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-4 -->
 
     <div class="question-5 hidden">
@@ -254,7 +240,7 @@
             <div class="color__var marsala"></div>
             <div class="color__var sky-blue"></div>
         </div>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-5 -->
 
     <div class="question-6 hidden">
@@ -274,7 +260,7 @@
             <div class="color__var yellow">
             </div><div class="color__var blue"></div>
         </div>
-        <button class="question__next-btn active-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-6 -->
 
     <div class="question-7 hidden">
@@ -312,8 +298,8 @@
                 <input type="radio" name="city" value="Ottawa" class="question__radio">
                 <span class="custom__label">Оттава</span>
             </label>
-        </form>
-        <button class="question__next-btn">Далее</button>
+        </form> 
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-7 -->
 
     <div class="question-8 hidden">
@@ -331,7 +317,7 @@
             <div class="choice-button" data-value="3">3</div>
             <div class="choice-button" data-value="4">4</div>
         </div>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-8 -->
 
     <div class="question-9 hidden">
@@ -357,7 +343,7 @@
                 <span class="custom__label">Учитывать в ежедневной практике прошлый опыт</span>
             </label>
         </form>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-9 -->
 
     <div class="question-10 hidden">
@@ -386,7 +372,7 @@
                 <span class="custom__label">Оно находится <br>в состоянии равновесия</span>
             </label>
         </form>
-        <button class="question__next-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-10 -->
 
     <div class="question-11 hidden">
@@ -406,12 +392,12 @@
             <div class="choice-button" data-value="66">66</div>
             <div class="choice-button" data-value="42">42</div>
         </div>
-        <button class="question__next-btn active-btn">Далее</button>
+        <button class="question__next-btn" disabled>Далее</button>
     </div><!--/. question-11 -->
 </section>
 
 <!-- Results processing screen -->
-<section class="results active hidden">
+<section class="results">
     <div class="results-processing hidden">
         <div class="progress">
             <div class="progress-bar"></div>
@@ -439,7 +425,7 @@
 </section>
 
 <!-- Ready results screen -->
-<section class="ready">
+<section class="ready hidden">
     <div class="ready__title">
         Ваш результат рассчитан:
     </div>
@@ -469,8 +455,6 @@
     </div>
 </section>
 
-
-
-
+<script src="js/script.js"></script>
 </body>
 </html>
