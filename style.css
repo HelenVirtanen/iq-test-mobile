@@ -70,10 +70,12 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.6px;
     color: #FFC700;
     text-align: center;
+    opacity: 0;
 }
 
 .header__img {
     margin: 0 9px;
+    opacity: 0;
 }
 
 /* Burger button */
@@ -456,51 +458,53 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .progress-bar {
-    width: 16px; /*6.15 %*/
+    width: 6.15%;
     height: 11px;
     border-radius: 10.5px;
     background-color: rgba(59, 222, 124, 1);
+    transition: width 0.5s ease;
 }
 
 .question-2 .progress-bar {
-    width: 25px; /*9.6 %*/
+    width: 9.6%;
 }
 
 .question-3 .progress-bar {
-    width: 36px; /*13.85%*/
+    width: 13.85%;
 }
 
 .question-4 .progress-bar {
-    width: 76px; /*29.2%*/
+    width: 29.2%;
 }
 
 .question-5 .progress-bar {
-    width: 93px; /*35.76%*/
+    width: 35.76%;
 }
 
 .question-6 .progress-bar {
-    width: 103px; /*39.6%*/
+    width: 39.6%;
 }
 
 .question-7 .progress-bar {
-    width: 128px; /*49.2%*/
+    width: 49.2%;
 }
 
 .question-8 .progress-bar {
-    width: 145px; /*55.7%*/
+    width: 55.7%;
 }
 
 .question-9 .progress-bar {
-    width: 150px; /*57.6%*/
+    width: 57.6%;
 }
 
 .question-10 .progress-bar {
-    width: 171px; /*65.76%*/
+    width: 65.76%;
 }
 
 .question-11 .progress-bar {
-    width: 194px; /*74.6%*/
+    width: 74.6%;
 }
+
 
 /* Question title */
 

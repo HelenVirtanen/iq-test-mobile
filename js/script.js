@@ -36,8 +36,9 @@ const mainSection = document.getElementById("main-screen");
 const introSection = document.getElementById("intro");
 const questionsSection= document.querySelector(".questions");
 const question1 = document.getElementById("question-1");
-
-
+const headerImg= document.querySelector(".header__img");
+const headerTitle= document.querySelector(".header__title");
+const headerTitleReady = document.querySelector(".header__title_ready");
 
 // Start test 
 const startTestButtons = document.querySelectorAll(".btn__begin-test, #menu-begin-test, #nav-begin-test");
@@ -49,6 +50,8 @@ startTestButtons.forEach(button => {
             questionsSection.classList.remove("hidden");
             question1.classList.remove("hidden");
             menu.classList.add('hidden');
+            headerImg.style.opacity = "1";
+            headerTitle.style.opacity = "1";
         });
     }
 });
@@ -58,6 +61,7 @@ startTestButtons.forEach(button => {
 const questions = document.querySelectorAll(".questions > div");
 const nextButtons = document.querySelectorAll(".question__next-btn");
 const resultsSection = document.querySelector(".results-processing");
+const progressBar = document.querySelector(".progress-bar");
 
 questions.forEach((question, index) => {
     const radioInputs = question.querySelectorAll("input[type='radio']");
@@ -122,12 +126,58 @@ questions.forEach((question, index) => {
             if (index < questions.length - 1) {
                 question.classList.add("hidden"); // Hide current question
                 questions[index + 1].classList.remove("hidden"); // Show next question
+
+                const progressWidth = questions.progressBar.style.width;
+                progressBar.style.width = questions.progressBar.style.width + questions[index + 1].progressBar.style.width;
+
             } else {
                 question.classList.add('hidden');
                 resultsSection.classList.remove('hidden');
+                progressBar.style.width = "100%";
+
+                const readySection = document.querySelector(".ready");
+                
+                setTimeout(() => {
+                    resultsSection.classList.add("hidden");
+                    readySection.classList.remove("hidden");
+                    headerTitle.classList.add("hidden");
+                    headerTitleReady.classList.remove("hidden");
+                }, 2000); 
+
+                startCountdown();
             }
         });
     });
+
+
+const callPeriod = document.querySelector('.call__period');
+
+function startCountdown() {
+    let [minutes, seconds] = callPeriod.textContent.split(':').map(Number);
+
+    const countdownInterval = setInterval(() => {
+        seconds--;
+
+        if (seconds < 0) {
+            seconds = 59;
+            minutes--;
+        }
+
+        if (minutes < 0) {
+            clearInterval(countdownInterval);
+            callPeriod.textContent = "00:00";
+            alert('Время истекло!');
+            return;
+        }
+
+        const formattedMinutes = String(minutes).padStart(2, '0');
+        const formattedSeconds = String(seconds).padStart(2, '0');
+
+        callPeriod.textContent = `${formattedMinutes}:${formattedSeconds}`;
+    }, 1000);
+}
+
+
 
 
 
