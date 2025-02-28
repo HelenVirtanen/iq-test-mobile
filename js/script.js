@@ -1,7 +1,24 @@
+// Buttons 
 const burgerBtn = document.getElementById('burger-btn');
 const closeBtn = document.getElementById('close-btn');
+
+// Header
+const headerImg= document.querySelector(".header__img");
+const headerTitle= document.querySelector(".header__title");
+const headerTitleReady = document.querySelector(".header__title_ready");
+
+// Menu 
 const menu = document.querySelector('.menu');
 const menuList = document.querySelector('.menu__list');
+const menuMain = document.querySelector("#menu-item-main");
+
+// Sections
+const mainSection = document.getElementById("main-screen");
+const introSection = document.getElementById("intro");
+const questionsSection= document.querySelector(".questions");
+const question1 = document.getElementById("question-1");
+const resultsSection = document.querySelector(".results-processing");
+const readySection = document.querySelector(".ready");
 
 
 
@@ -32,19 +49,39 @@ const menuLinks = document.querySelectorAll(".menu__item");
 
 menuLinks.forEach(link => {
     link.addEventListener("click", () => {
+        if (link == menuMain) {
+            if (mainSection.classList.contains("hidden")) {
+                mainSection.classList.remove("hidden");
+            }
+        }
         menu.classList.add('hidden');
+        toggleButtons(false);
     });
 });
 
 
 
-const mainSection = document.getElementById("main-screen");
-const introSection = document.getElementById("intro");
-const questionsSection= document.querySelector(".questions");
-const question1 = document.getElementById("question-1");
-const headerImg= document.querySelector(".header__img");
-const headerTitle= document.querySelector(".header__title");
-const headerTitleReady = document.querySelector(".header__title_ready");
+
+// Go back to main
+
+headerTitle.addEventListener("click", () => {
+    if (!questionsSection.classList.contains("hidden")) {
+        questionsSection.classList.add("hidden");
+    }
+
+    if (!readySection.classList.contains("hidden")) {
+        readySection.classList.add("hidden");
+    }
+
+    if (!resultsSection.classList.contains("hidden")) {
+        reasultsSection.classList.add("hidden");
+    }
+
+    if (mainSection.classList.contains("hidden")) {
+        mainSection.classList.remove("hidden");
+    }
+});
+
 
 // Start test 
 const startTestButtons = document.querySelectorAll(".btn__begin-test, #menu-begin-test");
@@ -66,8 +103,12 @@ startTestButtons.forEach(button => {
 
 const questions = document.querySelectorAll(".questions > div");
 const nextButtons = document.querySelectorAll(".question__next-btn");
-const resultsSection = document.querySelector(".results-processing");
 const progressBar = document.querySelector(".progress-bar");
+const progressWidths = [
+    "6.15%", "9.6%", "13.85%", "29.2%", "35.76%", 
+    "39.6%", "49.2%", "55.7%", "57.6%", "65.76%", "74.6%"
+];
+
 
 questions.forEach((question, index) => {
     const radioInputs = question.querySelectorAll("input[type='radio']");
@@ -127,21 +168,22 @@ questions.forEach((question, index) => {
         });
     }
 
+
         // Go to the next question by Next button
         nextButton.addEventListener("click", () => {
             if (index < questions.length - 1) {
                 question.classList.add("hidden"); // Hide current question
                 questions[index + 1].classList.remove("hidden"); // Show next question
 
-                const progressWidth = questions.progressBar.style.width;
-                progressBar.style.width = questions.progressBar.style.width + questions[index + 1].progressBar.style.width;
+                const nextProgressBar = questions[index + 1]?.querySelector(".progress-bar");
+                if (nextProgressBar) {
+                    console.log(progressWidths[index]);
+                    nextProgressBar.style.width = progressWidths[index + 1];}
+                console.log(nextProgressBar.style.width);    
 
             } else {
                 question.classList.add('hidden');
                 resultsSection.classList.remove('hidden');
-                progressBar.style.width = "100%";
-
-                const readySection = document.querySelector(".ready");
                 
                 setTimeout(() => {
                     resultsSection.classList.add("hidden");
