@@ -616,7 +616,7 @@ h1, h2, h3, h4, h5, h6, p {
     padding: 0 10px;
     font-size: 18px;
     line-height: 23.85px;
-    margin-bottom: 27px;
+    margin-bottom: 28px;
 }
 
 .question-4 .question__title {
@@ -650,9 +650,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin-bottom: 33px;
 }
 
-.question-4 .question__form,
-.question-7 .question__form  {
+.question-4 .question__form {
     margin-bottom: 29px;
+}
+.question-7 .question__form  {
+    margin-bottom: 30px;
 }
 
 .question-7 .question__form  {
@@ -723,6 +725,7 @@ h1, h2, h3, h4, h5, h6, p {
     padding-top: 9px;
     padding-bottom: 9px;
     line-height: 20px;
+    height: 78px;
 }
 
 .question-10 .custom__label:last-child {

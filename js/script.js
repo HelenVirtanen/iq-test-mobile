@@ -239,7 +239,7 @@ function startCountdown() {
 document.getElementById('call-btn').addEventListener('click', async () => {
     const callButton = document.querySelector('.call-btn');
     const container = document.getElementById('api-response-container');
-    callButton.style.marginBottom = '15px';
+    callButton.style.marginBottom = '2px';
     container.innerHTML = `
             <h3 style="text-align: center; color:#3bde7c;">Загрузка...</h3>`;
 
