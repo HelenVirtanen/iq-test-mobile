@@ -3,8 +3,8 @@ const burgerBtn = document.getElementById('burger-btn');
 const closeBtn = document.getElementById('close-btn');
 
 // Header
-const headerImg= document.querySelector(".header__img");
-const headerTitle= document.querySelector(".header__title");
+const logo = document.querySelector(".logo");
+const headerTitle = document.querySelector(".header__title");
 const headerTitleReady = document.querySelector(".header__title_ready");
 
 // Menu 
@@ -48,8 +48,9 @@ toggleButtons(false);
 const menuLinks = document.querySelectorAll(".menu__item");
 
 menuLinks.forEach(link => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
         if (link == menuMain) {
+            e.preventDefault();
             if (mainSection.classList.contains("hidden")) {
                 mainSection.classList.remove("hidden");
             }
@@ -93,7 +94,7 @@ startTestButtons.forEach(button => {
             questionsSection.classList.remove("hidden");
             question1.classList.remove("hidden");
             menu.classList.add('hidden');
-            headerImg.style.opacity = "1";
+            logo.style.opacity = "1";
             headerTitle.style.opacity = "1";
         });
     }
