@@ -109,7 +109,6 @@ startTestButtons.forEach(button => {
 // Next button
 
 const questions = document.querySelectorAll(".questions > div");
-const nextButtons = document.querySelectorAll(".question__next-btn");
 const progressBar = document.querySelector(".progress-bar");
 const progressWidths = [
     "6.15%", "9.6%", "13.85%", "29.2%", "35.76%", 
@@ -178,8 +177,10 @@ questions.forEach((question, index) => {
 
         // Go to the next question by Next button
         nextButton.addEventListener("click", () => {
+            question.classList.add("hidden");
+            
             if (index < questions.length - 1) {
-                question.classList.add("hidden"); // Hide current question
+                 // Hide current question
                 questions[index + 1].classList.remove("hidden"); // Show next question
 
                 const nextProgressBar = questions[index + 1]?.querySelector(".progress-bar");
@@ -189,7 +190,6 @@ questions.forEach((question, index) => {
                 console.log(nextProgressBar.style.width);    
 
             } else {
-                question.classList.add('hidden');
                 resultsSection.classList.remove('hidden');
                 
                 setTimeout(() => {

@@ -46,7 +46,6 @@ h1, h2, h3, h4, h5, h6, p {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 0 5px;
     transform: translate3d(0, 0, 0);
     box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
 }
@@ -59,7 +58,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Container */
 .container {
-    min-width: 300px;
+    min-width: 320px;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -192,6 +191,7 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
     max-width: 2030px;
     min-height: 523px;
+    height: 100vh;
     background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
     margin: 0 auto;
@@ -432,17 +432,8 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
 }
 
-.question-1,
-.question-2,
-.question-3,
-.question-4,
-.question-5,
-.question-6,
-.question-7,
-.question-8,
-.question-9,
-.question-10,
-.question-11 {
+.questions .question {
+    display: none;   
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -455,17 +446,11 @@ h1, h2, h3, h4, h5, h6, p {
     background-size: cover;
 }
 
-.question-1 .container,
-.question-2 .container,
-.question-3 .container,
-.question-4 .container,
-.question-5 .container,
-.question-6 .container,
-.question-7 .container,
-.question-8 .container,
-.question-9 .container,
-.question-10 .container,
-.question-11 .container {
+.questions .question:not(.hidden) {
+    display: flex;
+}
+
+.question .container {
     padding: 0;
 }
 
