@@ -285,9 +285,12 @@ h1, h2, h3, h4, h5, h6, p {
 
 .arrow {
     position: absolute;
-    top: -34%;
+    top: 21%;
     left: 27%;
+    display: block;
     margin: 0 auto;
+    padding: 0;
+    line-height: 0;
 }
 
 /* Description */
@@ -318,7 +321,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* Benefits */
 .benefits {
     padding: 40px 0;
-    min-height: 523px;
+    min-height: 511px;
 }
 
 .benefits__content {
@@ -347,7 +350,7 @@ h1, h2, h3, h4, h5, h6, p {
     padding-top: 56px;
     padding-bottom: 13px;
     width: 100%;
-    min-height: 523px;
+    min-height: 533px;
     background: url(images/dark-sky.jpg) no-repeat;
     background-color: radial-gradient(#2950C2, #265BC7F5 96%, #2762BB00 0%);
     background-size: cover;
