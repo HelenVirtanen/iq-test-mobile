@@ -444,6 +444,7 @@ h1, h2, h3, h4, h5, h6, p {
         rgba(13, 12, 17, 0.73)), 
         url(images/dark-sky.jpg) no-repeat;
     background-size: cover;
+    padding-top: 46px;
 }
 
 .questions .question:not(.hidden) {
@@ -1252,6 +1253,9 @@ h1, h2, h3, h4, h5, h6, p {
         height: auto;
     }
 
+    .questions .question {
+        padding-top: 64px;
+    }
 
     .question__label {
         width: 70%;
@@ -1360,19 +1364,9 @@ h1, h2, h3, h4, h5, h6, p {
         height: auto;
     }
 
-    .question-1,
-.question-2,
-.question-3,
-.question-4,
-.question-5,
-.question-6,
-.question-7,
-.question-8,
-.question-9,
-.question-10,
-.question-11 {
-    padding-top: 64px;
-}
+    .questions .question {
+        padding-top: 80px;
+    }
 
     .question__title {
         font-size: 28px;
