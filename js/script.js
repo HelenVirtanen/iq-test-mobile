@@ -4,6 +4,7 @@ const closeBtn = document.getElementById('close-btn');
 
 // Header
 const logo = document.querySelector(".logo__link");
+const logoImg = document.querySelector(".logo__link-img");
 const headerTitle = document.querySelector(".header__title");
 const headerTitleReady = document.querySelector(".header__title_ready");
 
@@ -37,6 +38,7 @@ burgerBtn.addEventListener('click', () => {
     };
     if (logo.style.opacity == 1) {
         logo.classList.add('hidden');
+        logoImg.classList.add('hidden');
     }
     toggleButtons(true);
 });
@@ -70,23 +72,23 @@ menuLinks.forEach(link => {
 
 
 // Go back to main
+linksToMainPage = [headerTitle, headerTitleReady, logo, menuMain];
 
-headerTitle.addEventListener("click", () => {
-    if (!questionsSection.classList.contains("hidden")) {
-        questionsSection.classList.add("hidden");
-    }
+linksToMainPage.forEach(link => {
+    link.addEventListener("click", () => {
+        let sectionsToHide = [  
+                                questionsSection, readySection, resultsSection, headerTitleReady
+                            ];
 
-    if (!readySection.classList.contains("hidden")) {
-        readySection.classList.add("hidden");
-    }
+        for (let s of sectionsToHide) {
+            if (!s.classList.contains("hidden")) {
+            s.classList.add("hidden");
+            }
+        }
 
-    if (!resultsSection.classList.contains("hidden")) {
-        reasultsSection.classList.add("hidden");
-    }
-
-    if (mainSection.classList.contains("hidden")) {
-        mainSection.classList.remove("hidden");
-    }
+        if (mainSection.classList.contains("hidden")) {
+            mainSection.classList.remove("hidden");}
+    });
 });
 
 
@@ -185,9 +187,7 @@ questions.forEach((question, index) => {
 
                 const nextProgressBar = questions[index + 1]?.querySelector(".progress-bar");
                 if (nextProgressBar) {
-                    console.log(progressWidths[index]);
-                    nextProgressBar.style.width = progressWidths[index + 1];}
-                console.log(nextProgressBar.style.width);    
+                    nextProgressBar.style.width = progressWidths[index + 1];}  
 
             } else {
                 resultsSection.classList.remove('hidden');
@@ -205,7 +205,10 @@ questions.forEach((question, index) => {
     });
 
 
+
+/* Timer */
 const callPeriod = document.querySelector('.call__period');
+const callButton = document.querySelector('.call-btn');
 
 function startCountdown() {
     let [minutes, seconds] = callPeriod.textContent.split(':').map(Number);
@@ -222,6 +225,7 @@ function startCountdown() {
             clearInterval(countdownInterval);
             callPeriod.textContent = "00:00";
             alert('Время истекло!');
+            callButton.disabled = true;
             return;
         }
 
@@ -237,7 +241,6 @@ function startCountdown() {
 /* Call API */
 
 document.getElementById('call-btn').addEventListener('click', async () => {
-    const callButton = document.querySelector('.call-btn');
     const container = document.getElementById('api-response-container');
     callButton.style.marginBottom = '2px';
     container.innerHTML = `
