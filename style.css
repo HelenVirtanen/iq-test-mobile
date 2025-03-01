@@ -102,6 +102,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     justify-content: center; 
     align-items: center;
+    margin-left: 5px;
 }
 
 .burger img {
@@ -292,6 +293,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Description */
 .description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     width: 100%;
     min-height: 339px;
     background: radial-gradient(circle, 
@@ -306,7 +311,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .description__content {
-    padding: 83px 0 56px;
     margin: 0 36px;
     font-family: 'Yeseva One';
     font-size: 18px;
@@ -314,6 +318,20 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
 }
 
+.description__content::before {
+    content: url(images/quotes.png);
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: rotate(180deg);
+}
+
+.description__content::after {
+    content: url(images/quotes.png);
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
 
 /* Benefits */
 .benefits {
@@ -1248,7 +1266,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .benefits__illustration img {
-        width: 50%;
+        width: 30%;
         height: auto;
     }
 
