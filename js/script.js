@@ -32,6 +32,12 @@ const toggleButtons = (isMenuOpen) => {
 // Open hidden menu
 burgerBtn.addEventListener('click', () => {
     menu.classList.remove('hidden');
+    if (headerTitle.style.opacity == 1) {
+        headerTitle.classList.add('hidden');
+    };
+    if (logo.style.opacity == 1) {
+        logo.classList.add('hidden');
+    }
     toggleButtons(true);
 });
 
