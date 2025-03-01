@@ -3,7 +3,7 @@ const burgerBtn = document.getElementById('burger-btn');
 const closeBtn = document.getElementById('close-btn');
 
 // Header
-const logo = document.querySelector(".logo");
+const logo = document.querySelector(".logo__link");
 const headerTitle = document.querySelector(".header__title");
 const headerTitleReady = document.querySelector(".header__title_ready");
 
