@@ -234,6 +234,77 @@ function startCountdown() {
 
 
 
+/* Call API */
+
+document.getElementById('call-btn').addEventListener('click', async () => {
+    const callButton = document.querySelector('.call-btn');
+    const container = document.getElementById('api-response-container');
+    callButton.style.marginBottom = '15px';
+    container.innerHTML = `
+            <h3 style="text-align: center; color:#3bde7c;">Загрузка...</h3>`;
+
+    try {
+        // Send response
+        const response = await fetch('https://swapi.dev/api/people/1/');
+        if (!response.ok) {
+            throw new Error('Ошибка загрузки данных');
+        }
+
+        // JSON parsing
+        const data = await response.json();
+
+        // Create HTML to show
+        const formattedData = `
+            <h3 style="text-align: center; color: #F4CE0C;">Данные о персонаже:</h3>
+            <table style="width: 100%; border-collapse: collapse; margin: 10px auto;">
+                <thead>
+                    <tr style="background-color: #181818; color: #F4CE0C; text-align: center;">
+                        <th style="padding: 8px; border: 1px solid #F4CE0C;">Свойство</th>
+                        <th style="padding: 8px; border: 1px solid #F4CE0C;">Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Имя</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.name}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Рост</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.height} см</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Масса</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.mass} кг</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Цвет волос</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.hair_color}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Цвет кожи</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.skin_color}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Цвет глаз</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.eye_color}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Год рождения</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.birth_year}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Пол</td>
+                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.gender}</td>
+                    </tr>
+                </tbody>
+            </table>
+        `;
+        // Pull data to container
+        container.innerHTML = formattedData;
+    } catch (error) {
+        container.innerHTML = `<p style="color: red;">Произошла ошибка: ${error.message}</p>`;
+    }
+});
 
 
 

@@ -1122,6 +1122,16 @@ h1, h2, h3, h4, h5, h6, p {
     white-space: normal; 
 }
 
+#api-response-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+    font-family: 'PT Serif';
+}
+
+
 
 /* Adaptive */
 
@@ -1256,6 +1266,10 @@ h1, h2, h3, h4, h5, h6, p {
         height: 14px; 
         border-radius: 12px;
     }
+
+    #api-response-container {
+        width: 50%;
+    }
 }
 
 @media (min-width: 990px) {
@@ -1300,11 +1314,8 @@ h1, h2, h3, h4, h5, h6, p {
         background-size: 30%, 100%;
     }
 
-    .progress {
-        width: 600px;
-        height: 16px; 
+    .progress { 
         margin: 25px auto 150px;
-        border-radius: 14px; 
     }
 
     .progress-bar {
