@@ -191,7 +191,6 @@ h1, h2, h3, h4, h5, h6, p {
     width: 100%;
     max-width: 2030px;
     min-height: 523px;
-    height: 100vh;
     background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
     margin: 0 auto;
@@ -1261,24 +1260,25 @@ h1, h2, h3, h4, h5, h6, p {
     
 
     .intro {
-        background: url(images/big-brain.png) 47% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
+        background: url(images/big-brain.png) 47% 57% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
         background-color: #181818;
         background-size: 50%, 100%;
     }
 
     .intro__inner {
         padding: 38px 0 16px;
+        margin-top: 64px;
     }
 
     .intro__test-title {
         font-size: 37px;
         line-height: 46.65px;
-        margin-bottom: 305px;
+        margin-bottom: 135px;
         padding: 0 95px
     }
 
     .intro__offering-reward {
-        margin: 24px auto 20px;
+        margin: 133px auto 20px;
         font-size: 18px;
         letter-spacing: 1.5px;
         width: 60%;
@@ -1391,6 +1391,10 @@ h1, h2, h3, h4, h5, h6, p {
     .container {
         max-width: 1700px;
     }
+
+    .intro__test-title {
+        font-size: 54px;
+    }
 }
 
 /* Notebook 1920x1080 */
@@ -1411,6 +1415,10 @@ h1, h2, h3, h4, h5, h6, p {
     .logo__link-img {
         width: 70px;
         height: auto;
+    }
+
+    .intro__inner {
+        margin-top: 80px;
     }
 
     .questions .question {
