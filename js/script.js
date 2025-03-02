@@ -21,6 +21,7 @@ const question1 = document.getElementById("question-1");
 const resultsSection = document.querySelector(".results-processing");
 const readySection = document.querySelector(".ready");
 
+const questions = document.querySelectorAll(".questions > div");
 
 
 /* Open and close hidden menu */
@@ -86,6 +87,12 @@ linksToMainPage.forEach(link => {
             }
         }
 
+        for (let q of questions) {
+            if (!q.classList.contains("hidden")) {
+            q.classList.add("hidden");
+            }
+        }
+
         if (mainSection.classList.contains("hidden")) {
             mainSection.classList.remove("hidden");}
     });
@@ -109,8 +116,6 @@ startTestButtons.forEach(button => {
 });
 
 // Next button
-
-const questions = document.querySelectorAll(".questions > div");
 const progressBar = document.querySelector(".progress-bar");
 const progressWidths = [
     "6.15%", "9.6%", "13.85%", "29.2%", "35.76%", 

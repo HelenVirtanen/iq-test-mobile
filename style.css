@@ -361,7 +361,8 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Timing */
 
-.timing { 
+.timing {
+    position: relative;
     padding-top: 56px;
     padding-bottom: 13px;
     width: 100%;
@@ -370,6 +371,22 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: radial-gradient(#2950C2, #265BC7F5 96%, #2762BB00 0%);
     background-size: cover;
 }
+
+.timing::before {
+    content: url(images/lightning-right.png);
+    position: absolute;
+    top: 13%;
+    right: 0%;
+}
+
+.timing::after {
+    content: url(images/lightning-left.png);
+    position: absolute;
+    bottom: 4%;
+    left: 0%;
+    transform: rotate(-5deg);
+}
+
 
 .timing__content {
     font-family: 'Merriweather';
@@ -382,6 +399,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .timing__results {
+    position: relative;
     font-family: 'Merriweather';
     font-size: 16px;
     color: #181818;
@@ -392,6 +410,7 @@ h1, h2, h3, h4, h5, h6, p {
     border-radius: 20px;
     border: none;
     margin-bottom: 33px;
+    z-index: 1;
 }
 
 .btn__begin-test_transparent {
