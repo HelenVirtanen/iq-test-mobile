@@ -1489,7 +1489,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .intro {
-        background: url(images/big-brain.png) 48% 38% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
+        background: url(images/big-brain.png) 48% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
         background-color: #181818;
         background-size: 30%, 100%;
     }
@@ -1502,14 +1502,14 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .intro__inner {
-        padding: 38px 0 24px;
+        padding: 38px 0 20px;
         margin-top: 80px;
     }
 
     .intro__test-title {
-        font-size: 46px;
+        font-size: 44px;
         line-height: 50.65px;
-        margin-bottom: 300px;
+        margin-bottom: 244px;
         padding: 0 200px;
         letter-spacing: 1.38px;
     }
@@ -1522,12 +1522,13 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .intro__offering-reward {
-        margin: 38px auto 31px;
-        font-size: 22px;
+        margin: 20px auto 20px;
+        font-size: 21px;
         letter-spacing: 1.8px;
-        width: 55%;
+        width: 50%;
         line-height: 24px;
     }
+}
 
     .circle {
         width: 24px;
