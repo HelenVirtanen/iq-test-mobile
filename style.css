@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6, p {
     letter-spacing: 0.6px;
     color: #FFC700;
     text-align: center;
-    padding: 10px;
+    padding: 15px 0;
     opacity: 0;
 }
 
@@ -1355,16 +1355,21 @@ h1, h2, h3, h4, h5, h6, p {
         min-height: 64px;
     }
 
-    .menu {
-        margin-left: 95px;
+    .logo__link-img {
+        width: 60px;
+        height: auto;
     }
 
     .menu__item {
         margin: 0 40px 0 0;
     }
 
+    .menu__item:last-child {
+        margin-right: 10px;
+    }
+
     .menu__item a {
-        font-size: 18px;
+        font-size: 19px;
     }
     
 
@@ -1377,6 +1382,12 @@ h1, h2, h3, h4, h5, h6, p {
     .intro__inner {
         padding: 38px 0 16px;
         margin-top: 64px;
+    }
+
+    .intro__offering {
+        font-size: 20px;
+        line-height: 25.85px;
+        letter-spacing: 1px;
     }
 
     .intro__test-title {
@@ -1409,6 +1420,14 @@ h1, h2, h3, h4, h5, h6, p {
         right: 17%;
     }
 
+    .btn__begin-test_transparent {
+        margin-bottom: 70px;
+    }
+
+    .timing {
+        min-height: 0;
+    }
+
     .questions .question {
         padding-top: 64px;
     }
@@ -1434,24 +1453,6 @@ h1, h2, h3, h4, h5, h6, p {
     }
 }
 
-@media (min-width: 990px) {
-
-    .intro__test-title {
-        margin-bottom: 390px;
-    }
-
-    .colors {
-        grid-template-columns: repeat(3, 125px);
-
-    }
-
-    .color__var {
-        width: 125px;
-        height: 125px;
-    }
-    
-}
-
 /* Notebook */
 @media (min-width: 1024px) {
     .header {
@@ -1462,7 +1463,7 @@ h1, h2, h3, h4, h5, h6, p {
         display: block;
         opacity: 1;
         font-size: 20px;
-        margin-left: 20px;
+        margin-left: 15px;
     }
 
     .header__inner {
@@ -1474,15 +1475,79 @@ h1, h2, h3, h4, h5, h6, p {
         padding: 0 40px;
     }
 
+    .header .container {
+        padding: 0 20px;
+    }
+
+    .menu__item {
+        margin: 0px 26px 0 0;
+        padding: 15px 0px;
+    }
+
+    .menu__item a {
+        font-size: 22px;
+    }
+
     .intro {
-        background: url(images/big-brain.png) 48% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
+        background: url(images/big-brain.png) 48% 38% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
         background-color: #181818;
         background-size: 30%, 100%;
     }
 
+    .intro__offering {
+        font-size: 24px;
+        line-height: 28.85px;
+        letter-spacing: 1.2px;
+        margin-bottom: 20px;
+    }
+
     .intro__inner {
-        padding: 38px 0 16px;
+        padding: 38px 0 24px;
         margin-top: 80px;
+    }
+
+    .intro__test-title {
+        font-size: 46px;
+        line-height: 50.65px;
+        margin-bottom: 300px;
+        padding: 0 200px;
+        letter-spacing: 1.38px;
+    }
+
+    .btn__begin-test {
+        width: 215px;
+        font-size: 20px;
+        padding: 18.05px 22.01px 15.25px;
+        border-radius: 35px;
+    }
+
+    .intro__offering-reward {
+        margin: 38px auto 31px;
+        font-size: 22px;
+        letter-spacing: 1.8px;
+        width: 55%;
+        line-height: 24px;
+    }
+
+    .circle {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 7px;
+    }
+
+    .arrow {
+        top: 20%;
+        left: 20%;
+    }
+
+    .arrow__img {
+        width: 14px;
+        height: auto;
+    }
+
+    .intro__show-more__link a {
+        font-size: 16px;
+        line-height: 18px;
     }
 
     .progress { 
@@ -1505,6 +1570,16 @@ h1, h2, h3, h4, h5, h6, p {
 
     .choice-button:last-child {
         margin-right: 0;
+    }
+
+    .colors {
+        grid-template-columns: repeat(3, 125px);
+
+    }
+
+    .color__var {
+        width: 125px;
+        height: 125px;
     }
 } 
 
