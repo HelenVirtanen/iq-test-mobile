@@ -320,6 +320,7 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0 36px;
     font-family: 'Yeseva One';
     font-size: 18px;
+    line-height: 23px;
     letter-spacing: 0.9px;
     text-align: center;
 }
@@ -1471,7 +1472,7 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .container {
-        max-width: 1000px;
+        max-width: 800px;
         padding: 0 40px;
     }
 
@@ -1510,7 +1511,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 44px;
         line-height: 50.65px;
         margin-bottom: 244px;
-        padding: 0 200px;
+        padding: 0 100px;
         letter-spacing: 1.38px;
     }
 
@@ -1525,10 +1526,9 @@ h1, h2, h3, h4, h5, h6, p {
         margin: 20px auto 20px;
         font-size: 21px;
         letter-spacing: 1.8px;
-        width: 50%;
+        width: 65%;
         line-height: 24px;
     }
-}
 
     .circle {
         width: 24px;
@@ -1550,6 +1550,73 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 16px;
         line-height: 18px;
     }
+
+    .description__content {
+        font-size: 22px;
+        letter-spacing: 1.1px;
+        line-height: 25px;
+    }
+
+    .description .container {
+        max-width: 600px;
+    }
+
+    .description__content::before {
+        top: 17%;
+        left: 26%;
+    }
+
+    .description__content::after {
+        bottom: 20%;
+        right: 26%;
+    }
+
+    .benefits {
+        padding: 80px 0px 80px;
+        min-height: 100%;
+    }
+
+    .benefits .container {
+        max-width: 900px;
+    }
+
+    .benefits__inner {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .benefits__content {
+        font-family: 'PT Serif';
+        font-size: 21px;
+        line-height: 29px;
+        letter-spacing: 1.05px;
+        margin-bottom: 0;
+    }
+
+    .benefits__illustration img {
+        width: 325px;
+        height: auto;
+    }
+
+    .timing__content {
+        font-size: 19px;
+        line-height: 27px;
+        letter-spacing: 0.95px;
+    }
+
+    .timing__results {
+        font-size: 20px;
+        line-height: 27px;
+        letter-spacing: 1px;
+        border-radius: 28px;
+    }
+
+    .timing__results {
+        padding: 27px 17px 32px 22px;
+        margin-bottom: 50px;
+    }
+
+
 
     .progress { 
         margin: 25px auto 150px;
