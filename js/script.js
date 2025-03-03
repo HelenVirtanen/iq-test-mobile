@@ -21,8 +21,6 @@ const question1 = document.getElementById("question-1");
 const resultsSection = document.querySelector(".results-processing");
 const readySection = document.querySelector(".ready");
 
-const questions = document.querySelectorAll(".questions > div");
-
 
 /* Open and close hidden menu */
 
@@ -116,100 +114,113 @@ startTestButtons.forEach(button => {
 });
 
 // Next button
-const progressBar = document.querySelector(".progress-bar");
 const progressWidths = [
     "6.15%", "9.6%", "13.85%", "29.2%", "35.76%", 
     "39.6%", "49.2%", "55.7%", "57.6%", "65.76%", "74.6%"
 ];
 
+document.addEventListener("DOMContentLoaded", () => {
+    const questions = document.querySelectorAll(".question");
+    const progressBar = document.querySelector(".progress-bar");
+    const nextButton = document.querySelector(".question__next-btn");
+    let currentQuestionIndex = 0;
 
-questions.forEach((question, index) => {
-    const radioInputs = question.querySelectorAll("input[type='radio']");
-    const colorOptions = question.querySelectorAll(".color__var");
-    const numberOptions = question.querySelectorAll(".choice-button")
-    const nextButton = question.querySelector(".question__next-btn");
-
-    // Behavior while choosing radiobuttons
-    if (radioInputs.length > 0) {
-        radioInputs.forEach((radio) => {
-            radio.addEventListener("change", () => {
-                // Remove from all labels class "choosed"
-                question.querySelectorAll(".question__label").forEach((label) => {
-                    label.classList.remove("choosed");
-                });
-
-                //Add to choosed radio label class "choosed"
-                const label = radio.closest(".question__label");
-                label.classList.add("choosed");
-
-                // Activate next button
-                nextButton.classList.add("active-btn");
-                nextButton.disabled = false;
-            });
+    // Initialize the first question
+    const showQuestion = (index) => {
+        questions.forEach((question, i) => {
+            question.classList.toggle("hidden", i !== index);
         });
-    }
+        updateProgress(index);
+        nextButton.disabled = true; // Disable button by default for new questions
+        nextButton.classList.remove("active-btn");
+    };
 
-    //Behavior while choosing color squares
-    if (colorOptions.length > 0) {
-        colorOptions.forEach((color) => {
-            color.addEventListener("click", () => {
-                // Remove class 'selected' from other squares
-                colorOptions.forEach((opt) => opt.classList.remove("selected"));
-                // Add class 'select' to selected square
-                color.classList.add("selected");
+    const updateProgress = (index) => {
+        const progress = ((index + 1) / questions.length) * 100;
+        progressBar.style.width = `${progress}%`;
+    };
 
-                // Activate next button
-                nextButton.classList.add("active-btn");
-                nextButton.disabled = false;
-            });
-        });
-    }
-
-    //Behavior while choosing number of picture
-    if (numberOptions.length > 0) {
-        numberOptions.forEach((color) => {
-            color.addEventListener("click", () => {
-                // Remove class 'selected' from other squares
-                numberOptions.forEach((opt) => opt.classList.remove("picked"));
-                // Add class 'select' to selected square
-                color.classList.add("picked");
-
-                // Activate next button
-                nextButton.classList.add("active-btn");
-                nextButton.disabled = false;
-            });
-        });
-    }
-
-
-        // Go to the next question by Next button
-        nextButton.addEventListener("click", () => {
-            question.classList.add("hidden");
+    // Handle Next button click
+    nextButton.addEventListener("click", () => {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            showQuestion(currentQuestionIndex);
+        } else {
+            questionsSection.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
             
-            if (index < questions.length - 1) {
-                 // Hide current question
-                questions[index + 1].classList.remove("hidden"); // Show next question
+            setTimeout(() => {
+                resultsSection.classList.add("hidden");
+                readySection.classList.remove("hidden");
+                headerTitle.classList.add("hidden");
+                headerTitleReady.classList.remove("hidden");
+            }, 2000); 
 
-                const nextProgressBar = questions[index + 1]?.querySelector(".progress-bar");
-                if (nextProgressBar) {
-                    nextProgressBar.style.width = progressWidths[index + 1];}  
-
-            } else {
-                resultsSection.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    resultsSection.classList.add("hidden");
-                    readySection.classList.remove("hidden");
-                    headerTitle.classList.add("hidden");
-                    headerTitleReady.classList.remove("hidden");
-                }, 2000); 
-
-                startCountdown();
-            }
-        });
+            startCountdown();}
     });
 
+    // Attach event listeners to each question
+    questions.forEach((question, index) => {
+        const radioInputs = question.querySelectorAll("input[type='radio']");
+        const colorOptions = question.querySelectorAll(".color__var");
+        const numberOptions = question.querySelectorAll(".choice-button");
 
+        // Behavior for radio buttons
+        if (radioInputs.length > 0) {
+            radioInputs.forEach((radio) => {
+                radio.addEventListener("change", () => {
+                    // Remove "choosed" class from all labels
+                    question.querySelectorAll(".question__label").forEach((label) => {
+                        label.classList.remove("choosed");
+                    });
+
+                    // Add "choosed" class to the selected label
+                    const label = radio.closest(".question__label");
+                    label.classList.add("choosed");
+
+                    // Activate Next button
+                    nextButton.classList.add("active-btn");
+                    nextButton.disabled = false;
+                });
+            });
+        }
+
+        // Behavior for color squares
+        if (colorOptions.length > 0) {
+            colorOptions.forEach((color) => {
+                color.addEventListener("click", () => {
+                    // Remove "selected" class from other squares
+                    colorOptions.forEach((opt) => opt.classList.remove("selected"));
+                    // Add "selected" class to the clicked square
+                    color.classList.add("selected");
+
+                    // Activate Next button
+                    nextButton.classList.add("active-btn");
+                    nextButton.disabled = false;
+                });
+            });
+        }
+
+        // Behavior for number options
+        if (numberOptions.length > 0) {
+            numberOptions.forEach((number) => {
+                number.addEventListener("click", () => {
+                    // Remove "picked" class from other buttons
+                    numberOptions.forEach((opt) => opt.classList.remove("picked"));
+                    // Add "picked" class to the clicked button
+                    number.classList.add("picked");
+
+                    // Activate Next button
+                    nextButton.classList.add("active-btn");
+                    nextButton.disabled = false;
+                });
+            });
+        }
+    });
+
+    // Show the first question on load
+    showQuestion(currentQuestionIndex);
+});
 
 /* Timer */
 const callPeriod = document.querySelector('.call__period');

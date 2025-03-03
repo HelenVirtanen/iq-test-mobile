@@ -466,17 +466,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 
 /* Questions */
-.questions {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.questions .question {
-    display: none;   
+.questions {  
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -490,11 +480,11 @@ h1, h2, h3, h4, h5, h6, p {
     padding-top: 46px;
 }
 
-.questions .question:not(.hidden) {
+.questions:not(.hidden) {
     display: flex;
 }
 
-.question .container {
+.questions .container {
     padding: 0;
 }
 
@@ -504,7 +494,7 @@ h1, h2, h3, h4, h5, h6, p {
     height: 11px;
     background-color:rgba(79, 79, 79, 0.5);
     border-radius: 10.5px;
-    margin: 17px auto 101px;
+    margin: 17px auto 30px;
 }
 
 .question-2 .progress {
@@ -1601,7 +1591,7 @@ h1, h2, h3, h4, h5, h6, p {
     .timing {
         min-height: 660px;
     }
-    
+
     .timing__content {
         font-size: 19px;
         line-height: 27px;
