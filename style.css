@@ -1597,7 +1597,11 @@ h1, h2, h3, h4, h5, h6, p {
         width: 325px;
         height: auto;
     }
-
+    
+    .timing {
+        min-height: 660px;
+    }
+    
     .timing__content {
         font-size: 19px;
         line-height: 27px;
@@ -1616,7 +1620,7 @@ h1, h2, h3, h4, h5, h6, p {
         margin-bottom: 50px;
     }
 
-
+    
 
     .progress { 
         margin: 25px auto 150px;
@@ -1653,6 +1657,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Notebook 1280 */
 @media (min-width: 1280px) {
+
 }
 
 /* Notebook 1600 */
@@ -1664,10 +1669,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* Notebook 1920x1080 */
 @media (min-width: 1920px) {
-    .header__inner {
-        min-height: 80px;
-    }
-    
     .menu__item a {
         font-size: 26px;
         font-weight: 400;
