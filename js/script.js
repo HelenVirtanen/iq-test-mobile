@@ -45,14 +45,14 @@ burgerBtn.addEventListener('click', () => {
 // Close hidden menu
 
 closeBtn.addEventListener('click', () => {
-menu.classList.add('hidden');
-toggleButtons(false);
+    menu.classList.add('hidden');
+    toggleButtons(false);
 });
 
 
 
 // Open menu links
-const menuLinks = document.querySelectorAll(".menu__item");
+const menuLinks = document.querySelectorAll(".menu__item a");
 
 menuLinks.forEach(link => {
     link.addEventListener("click", (e) => {
@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 resultsSection.classList.add("hidden");
                 readySection.classList.remove("hidden");
                 headerTitle.classList.add("hidden");
+                headerTitle.style.opacity = 0;
                 headerTitleReady.classList.remove("hidden");
             }, 2000); 
 
@@ -222,7 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
     showQuestion(currentQuestionIndex);
 });
 
-/* Timer */
+
+/* =======================
+        Timer 
+==========================*/
 const callPeriod = document.querySelector('.call__period');
 const callButton = document.querySelector('.call-btn');
 
@@ -254,7 +258,9 @@ function startCountdown() {
 
 
 
-/* Call API */
+/*==============
+    Call API 
+================*/
 
 document.getElementById('call-btn').addEventListener('click', async () => {
     const container = document.getElementById('api-response-container');
