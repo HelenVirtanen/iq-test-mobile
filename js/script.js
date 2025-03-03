@@ -18,13 +18,14 @@ const mainSection = document.getElementById("main-screen");
 const introSection = document.getElementById("intro");
 const questionsSection= document.querySelector(".questions");
 const question1 = document.getElementById("question-1");
+const questions = document.querySelectorAll(".question");
 const resultsSection = document.querySelector(".results-processing");
 const readySection = document.querySelector(".ready");
 
 
 /*=================================
-     Open and close hidden menu 
- =================================*/
+    Open and close hidden menu 
+=================================*/
 
 const toggleButtons = (isMenuOpen) => {
     burgerBtn.classList.toggle('hidden', isMenuOpen);
@@ -125,7 +126,6 @@ const progressWidths = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    const questions = document.querySelectorAll(".question");
     const progressBar = document.querySelector(".progress-bar");
     const nextButton = document.querySelector(".question__next-btn");
     let currentQuestionIndex = 0;
@@ -152,12 +152,19 @@ document.addEventListener("DOMContentLoaded", () => {
             showQuestion(currentQuestionIndex);
         } else {
             questionsSection.classList.add('hidden');
+
+            for (let q of questions) {
+                if (!q.classList.contains("hidden")) {
+                q.classList.add("hidden");
+                };
+            };
+
             resultsSection.classList.remove('hidden');
             
             setTimeout(() => {
                 resultsSection.classList.add("hidden");
                 readySection.classList.remove("hidden");
-                headerTitle.classList.add("hidden");
+                headerTitle.style.display = "none";
                 headerTitleReady.classList.remove("hidden");
             }, 2000); 
 
