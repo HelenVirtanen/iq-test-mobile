@@ -83,7 +83,6 @@ h1, h2, h3, h4, h5, h6, p {
     color: #FFC700;
     text-align: center;
     padding: 15px 0;
-    opacity: 0;
 }
 
 .logo {
@@ -1011,7 +1010,7 @@ h1, h2, h3, h4, h5, h6, p {
     text-transform: uppercase;
     color: rgba(59, 222, 124, 1);
     letter-spacing: 1.8px;
-    padding: 0 23px;
+    padding: 0 15px;
     font-weight: 700;
     margin-bottom: 12px;
 }
@@ -1123,6 +1122,14 @@ h1, h2, h3, h4, h5, h6, p {
     background: url(images/brain-bcg.jpg) 50% 32% no-repeat;
     background-size: cover;
     }
+
+    .questions .container {
+        justify-content: stretch;
+    }
+
+    .progress {
+        margin-bottom: 20px;
+    }
 }
 
 @media (min-width: 480px) {
@@ -1146,10 +1153,6 @@ h1, h2, h3, h4, h5, h6, p {
 
     .header__inner {
         min-height: 54px;
-    }
-
-    .header__title {
-        display: none;
     }
 
     .menu {
@@ -1381,6 +1384,10 @@ h1, h2, h3, h4, h5, h6, p {
         padding-top: 64px;
     }
 
+    .questions .container {
+        justify-content: center;
+    }
+
     .question__label {
         width: 70%;
     }
@@ -1388,7 +1395,7 @@ h1, h2, h3, h4, h5, h6, p {
     .progress {
         width: 400px; 
         height: 14px; 
-        margin: 20px auto 0px;
+        margin: 20px auto 20px;
         border-radius: 12px;
     }
 
@@ -1410,6 +1417,18 @@ h1, h2, h3, h4, h5, h6, p {
     .color__var {
         width: 100px;
         height: 100px;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+
+    .choice-button {
+        margin-right: 30px;
+    }
+
+    .choice-button:last-child {
+        margin-right: 0;
     }
 
     .results-processing,
@@ -1501,14 +1520,13 @@ h1, h2, h3, h4, h5, h6, p {
 /* Notebook */
 @media (min-width: 1024px) {
     .header {
-    display: block;
+        display: block;
     }
 
     .header__title {
-        display: block;
-        opacity: 1;
         font-size: 20px;
         margin-left: 15px;
+        line-height: 24px;
     }
 
     .header__inner {
@@ -1686,7 +1704,8 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .progress { 
-        margin: 25px auto 0px;
+        height: 16px;
+        margin: 25px auto 25px;
     }
 
     .progress-bar {
@@ -1699,21 +1718,13 @@ h1, h2, h3, h4, h5, h6, p {
         margin: 0 auto 35px;
     }
 
-    .choice-button {
-        margin-right: 20px;
-    }
-
-    .choice-button:last-child {
-        margin-right: 0;
-    }
-
-    .question-5 {margin-top: 25px;
+    .question-5 {
+        margin-top: 25px;
     }
 
     .ready,
     .results-processing {
         padding-top: 80px;
-        height: 100vh;
     }
 } 
 
@@ -1736,8 +1747,6 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .header__title {
-        display: block;
-        opacity: 1;
         font-size: 24px;
         margin-left: 15px;
     }

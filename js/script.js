@@ -22,7 +22,9 @@ const resultsSection = document.querySelector(".results-processing");
 const readySection = document.querySelector(".ready");
 
 
-/* Open and close hidden menu */
+/*=================================
+     Open and close hidden menu 
+ =================================*/
 
 const toggleButtons = (isMenuOpen) => {
     burgerBtn.classList.toggle('hidden', isMenuOpen);
@@ -32,7 +34,7 @@ const toggleButtons = (isMenuOpen) => {
 // Open hidden menu
 burgerBtn.addEventListener('click', () => {
     menu.classList.remove('hidden');
-    if (headerTitle.style.opacity == 1) {
+    if (!headerTitle.classList.contains('hidden')) {
         headerTitle.classList.add('hidden');
     };
     if (logo.style.opacity == 1) {
@@ -50,7 +52,6 @@ closeBtn.addEventListener('click', () => {
 });
 
 
-
 // Open menu links
 const menuLinks = document.querySelectorAll(".menu__item a");
 
@@ -62,7 +63,11 @@ menuLinks.forEach(link => {
                 mainSection.classList.remove("hidden");
             }
         }
-        menu.classList.add('hidden');
+        if (!questionsSection.classList.contains("hidden")) {
+            questionsSection.classList.add("hidden");
+
+        }
+        menu.classList.add("hidden");
         toggleButtons(false);
     });
 });
@@ -108,7 +113,7 @@ startTestButtons.forEach(button => {
             question1.classList.remove("hidden");
             menu.classList.add('hidden');
             logo.style.opacity = "1";
-            headerTitle.style.opacity = "1";
+            headerTitle.classList.remove("hidden");
         });
     }
 });
@@ -153,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 resultsSection.classList.add("hidden");
                 readySection.classList.remove("hidden");
                 headerTitle.classList.add("hidden");
-                headerTitle.style.opacity = 0;
                 headerTitleReady.classList.remove("hidden");
             }, 2000); 
 
