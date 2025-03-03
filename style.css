@@ -1,6 +1,7 @@
 /* General Styles */
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 *, 
@@ -812,6 +813,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0 auto 25px;
 }
 
+.picture_1 {
+    width: 185px;
+    height: auto;
+}
+
 .question-10 .question__picture img {
     margin-bottom: 20px;
 }
@@ -874,7 +880,8 @@ h1, h2, h3, h4, h5, h6, p {
 .results-processing {
     min-height: 568px;
     width: 100%;
-    height: 100%; 
+    height: 100%;
+    padding-top: 46px; 
 }
 
 .results .progress {
@@ -1390,8 +1397,9 @@ h1, h2, h3, h4, h5, h6, p {
         border-radius: 12px;
     }
 
-    #api-response-container {
-        width: 50%;
+    .picture_1 {
+        width: 250px;
+        height: auto;
     }
 
     .colors {
@@ -1404,8 +1412,89 @@ h1, h2, h3, h4, h5, h6, p {
         height: 100px;
     }
 
+    .results-processing,
     .ready {
         padding-top: 64px;
+    }
+
+    .ready__title {
+        font-family: 'PT Serif';
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 21px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding-top: 44px;
+        margin-bottom: 22px;
+    }
+
+    .ready__content {
+        margin: 0 auto 62px;
+        padding: 0px 23px;
+        font-size: 17px;
+        line-height: 21px;
+    }
+
+    .ready__offer {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 2px;
+        margin-bottom: 16px;
+    }
+
+    .personal-data {
+        width: 280px;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .call__content {
+        font-size: 14px;
+        line-height: 32px;
+        letter-spacing: 2px;
+    }
+
+    .call__period {
+        font-size: 23px;
+        letter-spacing: 2.1px;
+    }
+
+    .call__content:last-child {
+        line-height: 15px;
+        margin-bottom: 15px;
+    }
+
+    .call-btn {
+        width: 335px;
+        height: 105px;
+        border-radius: 10px;
+    }
+
+    .call-btn__icon {
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+        margin-right: 18px;
+    }
+
+
+    .call-btn__text {
+        margin-right: 20px;
+        font-size: 18px;
+        line-height: 22.58px;
+        letter-spacing: 0.9px;
+    }
+
+    .ready__footer {
+        font-size: 10px;
+        line-height: 12px;
+        letter-spacing: 5px;
+        max-height: calc(12px* 2);
+    }
+
+    #api-response-container {
+        width: 50%;
     }
 }
 
@@ -1621,7 +1710,8 @@ h1, h2, h3, h4, h5, h6, p {
     .question-5 {margin-top: 25px;
     }
 
-    .ready {
+    .ready,
+    .results-processing {
         padding-top: 80px;
         height: 100vh;
     }
