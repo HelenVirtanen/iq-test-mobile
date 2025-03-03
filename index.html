@@ -42,14 +42,18 @@
     <section class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
+                <div class="intro__start">
                 <p class="intro__offering">Пройдите точный и быстрый</p>
                 <h1 class="intro__test-title">
                 Тест на определение IQ
                 </h1>
+            </div>
+
+                <div class="intro__end">
                 <button class="btn__begin-test">Пройти тест</button>
                 <p class="intro__offering-reward"><span class="yellow-text">И получите рекомендации 
                 по развитию своего интеллекта</span><br>
-                и улучшению финансового благосостояния и личной жизни</p>
+                и улучшению финансового благосостояния и личной жизни</p></div>
                 <div class="intro__show-more">
                     <div class="circle">
                         <div class="arrow">
@@ -64,15 +68,19 @@
         </div>
     </section>
 
-    <!-- Description -->
-    <section class="description" id="description">
-        <div class="container">
-            <p class="description__content">Профессиональный IQ-тест позволяет не только определить коэффициент вашего интеллекта, но и выработать список рекомендаций для повышения этого показателя.</p>
-        </div>
-    </section>
-    <!-- Benefits -->
-    <section class="benefits" id="benefits">
-        <div class="container">
+
+    <!-- About test --> 
+    
+    <section class="about__test">
+        <!-- Description -->
+        <article class="description" id="description">
+            <div class="container">
+                <p class="description__content">Профессиональный IQ-тест позволяет не только определить коэффициент вашего интеллекта, но и выработать список рекомендаций для повышения этого показателя.</p>
+            </div>
+        </article>
+        <!-- Benefits -->
+        <article class="benefits" id="benefits">
+            <div class="container">
             <div class="benefits__inner">
             <p class="benefits__content">Также по результатам теста
                 <b><span class="big-letters">вы получите</span></b> подробные <b><span class="big-letters">советы</span></b> по определению наиболее перспективной <b><span class="big-letters">для вашего типа</span></b> интеллекта <b><span class="big-letters">сферы деятельности</span></b>, которая принесет вам скорейший финансовый результат.
@@ -83,8 +91,9 @@
             </div>
             <button class="btn__begin-test">Пройти тест</button>
         </div>
+        </article>
     </section>
-
+    
     <!-- Timing -->
     <section class="timing" id="timing">
         <div class="container">
@@ -104,8 +113,11 @@
             <div class="progress">
                 <div class="progress-bar"></div>
             </div>
+
             <div class="question question-1 hidden" id="question-1">
+        <div class="question__inner">
         <h2 class="question__title">Ваш пол:</h2>
+        </div>
         <form class="question__form">
             <label class="question__label">
                 <input type="radio" name="gender" value="male" class="question__radio">
@@ -117,6 +129,7 @@
                 <span class="custom__label">Женщина</span>
             </label>
         </form>
+        
             </div><!--/.question-1 -->
             
             <div class="question question-2 hidden">
@@ -175,8 +188,8 @@
             </div><!--/. question-3 -->
             
             <div class="question question-4 hidden">
-        <h2 class="question__title">Продолжите числовой ряд:
-            18  20  24  32  </h2>
+        <h2 class="question__title">Продолжите числовой ряд:<br>
+            <span class="word__space">18  20  24  32 </span></h2>
         <form class="question__form">
             <label class="question__label">
                 <input type="radio" name="number" value="62" class="question__radio">

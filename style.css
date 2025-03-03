@@ -35,6 +35,10 @@ h1, h2, h3, h4, h5, h6, p {
     display: none;
 }
 
+.word__space {
+    word-spacing: 10px;
+}
+
 
 /* Header */
 .header {
@@ -196,7 +200,6 @@ h1, h2, h3, h4, h5, h6, p {
 /* Intro */
 .intro {
     width: 100%;
-    max-width: 2030px;
     min-height: 523px;
     background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
@@ -486,6 +489,11 @@ h1, h2, h3, h4, h5, h6, p {
 
 .questions .container {
     padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Progress part */
@@ -494,7 +502,7 @@ h1, h2, h3, h4, h5, h6, p {
     height: 11px;
     background-color:rgba(79, 79, 79, 0.5);
     border-radius: 10.5px;
-    margin: 17px auto 30px;
+    margin: 17px auto 0;
 }
 
 .progress-bar {
@@ -582,7 +590,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-bottom: 152px;
+    margin-bottom: 50px;
 }
 
 .question-2 .question__form {
@@ -859,6 +867,10 @@ h1, h2, h3, h4, h5, h6, p {
     align-items: center;
 }
 
+.results .container {
+    padding: 0;
+}
+
 .results-processing {
     min-height: 568px;
     width: 100%;
@@ -944,6 +956,8 @@ h1, h2, h3, h4, h5, h6, p {
 .ready {
     background: url(images/dark-sky-ready.png) no-repeat;
     background-size: cover;
+    height: 100vh;
+    padding-top: 46px;
 }
 
 .header__title_ready {
@@ -1247,6 +1261,19 @@ h1, h2, h3, h4, h5, h6, p {
         top: 10%;
         font-size: 12px;
     }
+
+    .progress {
+        width: 360px;
+        height: 16px;
+        margin-top: 24px;
+        border-radius: 12.5px;
+    }
+
+    .progress-bar {
+        width: 0%;
+        height: 16px;
+        border-radius: 12.5px;
+    }
 }
 
 
@@ -1343,7 +1370,7 @@ h1, h2, h3, h4, h5, h6, p {
         min-height: 0;
     }
 
-    .questions .question {
+    .questions {
         padding-top: 64px;
     }
 
@@ -1354,7 +1381,7 @@ h1, h2, h3, h4, h5, h6, p {
     .progress {
         width: 400px; 
         height: 14px; 
-        margin: 20px auto 120px;
+        margin: 20px auto 0px;
         border-radius: 12px;
     }
 
@@ -1365,6 +1392,20 @@ h1, h2, h3, h4, h5, h6, p {
 
     #api-response-container {
         width: 50%;
+    }
+
+    .colors {
+        grid-template-columns: repeat(3, 100px);
+
+    }
+
+    .color__var {
+        width: 100px;
+        height: 100px;
+    }
+
+    .ready {
+        padding-top: 64px;
     }
 }
 
@@ -1431,7 +1472,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     .btn__begin-test {
         width: 215px;
-        font-size: 20px;
+        font-size: 19px;
         padding: 18.05px 22.01px 15.25px;
         border-radius: 35px;
     }
@@ -1465,6 +1506,15 @@ h1, h2, h3, h4, h5, h6, p {
         line-height: 18px;
     }
 
+    .about__test {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .description {
+        width: 50%;
+    }
+
     .description__content {
         font-size: 22px;
         letter-spacing: 1.1px;
@@ -1476,27 +1526,30 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .description__content::before {
-        top: 17%;
-        left: 26%;
+        top: 25%;
+        left: 10%;
     }
 
     .description__content::after {
-        bottom: 20%;
-        right: 26%;
+        bottom: 28%;
+        right: 10%;
     }
 
     .benefits {
-        padding: 80px 0px 80px;
+        width: 50%;
+        padding: 60px 0px;
         min-height: 100%;
     }
 
     .benefits .container {
         max-width: 900px;
+        padding: 0 50px;
     }
 
     .benefits__inner {
         display: flex;
-        margin-bottom: 30px;
+        flex-direction: column;
+        margin-bottom: 0;
     }
 
     .benefits__content {
@@ -1504,14 +1557,19 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 21px;
         line-height: 29px;
         letter-spacing: 1.05px;
-        margin-bottom: 0;
+        margin-bottom: 35px;
     }
 
     .benefits__illustration img {
         width: 325px;
         height: auto;
     }
+
+    .benefits .btn__begin-test {
+        margin-top: -25px;
+    }
     
+
     .timing {
         min-height: 660px;
     }
@@ -1534,10 +1592,12 @@ h1, h2, h3, h4, h5, h6, p {
         margin-bottom: 50px;
     }
 
-    
+    .questions {
+        padding-top: 80px;
+    }
 
     .progress { 
-        margin: 25px auto 150px;
+        margin: 25px auto 0px;
     }
 
     .progress-bar {
@@ -1558,14 +1618,12 @@ h1, h2, h3, h4, h5, h6, p {
         margin-right: 0;
     }
 
-    .colors {
-        grid-template-columns: repeat(3, 125px);
-
+    .question-5 {margin-top: 25px;
     }
 
-    .color__var {
-        width: 125px;
-        height: 125px;
+    .ready {
+        padding-top: 80px;
+        height: 100vh;
     }
 } 
 
@@ -1658,6 +1716,50 @@ h1, h2, h3, h4, h5, h6, p {
     .intro__show-more__link a {
         font-size: 18px;
         line-height: 18px;
+    }
+
+    .description {
+        width: 35%;
+    }
+
+    .description__content {
+        font-size: 25px;
+        letter-spacing: 1.25px;
+        line-height: 30px;
+    }
+
+    .description__content::before {
+        left: 11%;
+    }
+
+    .description__content::after {
+        right: 13%;
+    }
+
+    .benefits {
+        padding-bottom: 60px;
+        width: 65%;
+    }
+
+    .benefits .container {
+        max-width: 1100px;
+    }
+
+    .benefits__inner {
+        margin-bottom: 0;
+        flex-direction: column;
+    }
+
+    .benefits__content {
+        font-family: 'PT Serif';
+        font-size: 26px;
+        line-height: 34px;
+        letter-spacing: 1.05px;
+        margin-bottom: 80px;
+    }
+
+    .benefits .btn__begin-test {
+        margin-top: auto;
     }
 
     .questions .question {
