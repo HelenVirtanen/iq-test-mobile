@@ -497,88 +497,12 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 17px auto 30px;
 }
 
-.question-2 .progress {
-    margin-bottom: 65px;
-}
-
-.question-3 .progress {
-    margin-bottom: 42px;
-}
-
-.question-4 .progress,
-.question-5 .progress {
-    margin-bottom: 28px;
-}
-
-.question-6 .progress,
-.question-8 .progress,
-.question-10 .progress {
-    margin-bottom: 17px;
-}
-
-.question-7 .progress {
-    margin-bottom: 37px;
-}
-
-.question-9 .progress {
-    margin-bottom: 44px;
-}
-
-.question-11 .progress {
-    margin-bottom: 33px;
-}
-
 .progress-bar {
     width: 0%;
     height: 11px;
     border-radius: 10.5px;
     background-color: rgba(59, 222, 124, 1);
     transition: width 0.5s ease;
-}
-
-.question-1 .progress-bar {
-    width: 6.15%;
-}
-
-
-.question-2 .progress-bar {
-    width: 9.6%;
-}
-
-.question-3 .progress-bar {
-    width: 13.85%;
-}
-
-.question-4 .progress-bar {
-    width: 29.2%;
-}
-
-.question-5 .progress-bar {
-    width: 35.76%;
-}
-
-.question-6 .progress-bar {
-    width: 39.6%;
-}
-
-.question-7 .progress-bar {
-    width: 49.2%;
-}
-
-.question-8 .progress-bar {
-    width: 55.7%;
-}
-
-.question-9 .progress-bar {
-    width: 57.6%;
-}
-
-.question-10 .progress-bar {
-    width: 65.76%;
-}
-
-.question-11 .progress-bar {
-    width: 74.6%;
 }
 
 
@@ -1660,8 +1584,14 @@ h1, h2, h3, h4, h5, h6, p {
 /* Notebook 1920x1080 */
 @media (min-width: 1920px) {
     .menu__item a {
-        font-size: 26px;
-        font-weight: 400;
+        font-size: 28px;
+    }
+
+    .header__title {
+        display: block;
+        opacity: 1;
+        font-size: 24px;
+        margin-left: 15px;
     }
 
     .logo__link-img {
@@ -1669,8 +1599,65 @@ h1, h2, h3, h4, h5, h6, p {
         height: auto;
     }
 
+    .intro {
+        background: url(images/big-brain.png) 49% 45% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
+        background-color: #181818;
+        background-size: 25%, 100%;
+    }
+
     .intro__inner {
         margin-top: 80px;
+    }
+    
+    .intro__offering {
+        font-size: 28px;
+        line-height: 28.85px;
+        letter-spacing: 1.2px;
+        margin-bottom: 30px;
+    }
+
+    .intro__test-title {
+        font-size: 64px;
+        line-height: 67.65px;
+        margin-bottom: 360px;
+        padding: 0 100px;
+        letter-spacing: 1.38px;
+    }
+
+    .btn__begin-test {
+        width: 265px;
+        font-size: 24px;
+        padding: 22.05px 20.01px 20.25px;
+        border-radius: 40px;
+    }
+
+    .intro__offering-reward {
+        margin: 35px auto 43px;
+        font-size: 28px;
+        letter-spacing: 1.8px;
+        width: 80%;
+        line-height: 32px;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 7px;
+    }
+
+    .arrow {
+        top: 20%;
+        left: 20%;
+    }
+
+    .arrow__img {
+        width: 18px;
+        height: auto;
+    }
+
+    .intro__show-more__link a {
+        font-size: 18px;
+        line-height: 18px;
     }
 
     .questions .question {
