@@ -35,13 +35,11 @@ const toggleButtons = (isMenuOpen) => {
 // Open hidden menu
 burgerBtn.addEventListener('click', () => {
     menu.classList.remove('hidden');
-    if (!headerTitle.classList.contains('hidden')) {
-        headerTitle.classList.add('hidden');
-    };
-    if (logo.style.opacity == 1) {
-        logo.classList.add('hidden');
-        logoImg.classList.add('hidden');
-    }
+    headerTitle.classList.add('hidden');
+
+    const isVisible = logo.style.opacity === 1;
+    logo.classList.toggle('hidden', isVisible);
+    logoImg.classList.add('hidden', isVisible);
     toggleButtons(true);
 });
 
@@ -54,26 +52,20 @@ closeBtn.addEventListener('click', () => {
 
 
 // Open menu links
-const menuLinks = document.querySelectorAll(".menu__item a");
 
-menuLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-        if (link == menuMain) {
-            e.preventDefault();
-            if (mainSection.classList.contains("hidden")) {
-                mainSection.classList.remove("hidden");
-            }
-        }
-        if (!questionsSection.classList.contains("hidden")) {
-            questionsSection.classList.add("hidden");
+menu.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link) return;
 
-        }
-        menu.classList.add("hidden");
-        toggleButtons(false);
-    });
+    if (link === menuMain) {
+        e.preventDefault();
+        mainSection.classList.remove("hidden");
+        questionsSection.classList.add("hidden");
+    }
+
+    menu.classList.add("hidden");
+    toggleButtons(false);
 });
-
-
 
 /*=======================
     Go back to main
@@ -88,20 +80,14 @@ linksToMainPage.forEach(link => {
                             ];
 
         for (let s of sectionsToHide) {
-            if (!s.classList.contains("hidden")) {
             s.classList.add("hidden");
-            }
         }
 
         for (let q of questions) {
-            if (!q.classList.contains("hidden")) {
             q.classList.add("hidden");
-            }
         }
 
-        if (mainSection.classList.contains("hidden")) {
-            mainSection.classList.remove("hidden");}
-    });
+        mainSection.classList.remove("hidden");});
 });
 
 
@@ -151,119 +137,117 @@ startTestButtons.forEach(button => {
 /*===================
     Questions and Next button 
  ==================== */
-const progressWidths = [
-    "6.15%", "9.6%", "13.85%", "29.2%", "35.76%", 
-    "39.6%", "49.2%", "55.7%", "57.6%", "65.76%", "74.6%"
-];
 
-document.addEventListener("DOMContentLoaded", () => {
-    const progressBar = document.querySelector(".progress-bar");
-    const nextButton = document.querySelector(".question__next-btn");
-    let currentQuestionIndex = 0;
+const progressBar = document.querySelector(".progress-bar");
+const nextButton = document.querySelector(".question__next-btn");
+let currentQuestionIndex = 0;
 
-    // Initialize the first question
-    const showQuestion = (index) => {
-        questions.forEach((question, i) => {
-            question.classList.toggle("hidden", i !== index);
-        });
-        updateProgress(index);
-        nextButton.disabled = true; // Disable button by default for new questions
-        nextButton.classList.remove("active-btn");
+// Initialize the first question
+const showQuestion = (index) => {
+    questions.forEach((question, i) => {
+        question.classList.toggle("hidden", i !== index);
+    });
+    updateProgress(index);
+    nextButton.disabled = true; // Disable button by default for new questions
+    nextButton.classList.remove("active-btn");
+};
+
+const updateProgress = (index) => {
+    const progress = ((index + 1) / questions.length) * 100;
+    progressBar.style.width = `${progress}%`;
+};
+
+// Handle Next button click
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
+    } else {
+        questionsSection.classList.add('hidden');
+
+    for (let q of questions) {
+        q.classList.add("hidden");
     };
 
-    const updateProgress = (index) => {
-        const progress = ((index + 1) / questions.length) * 100;
-        progressBar.style.width = `${progress}%`;
-    };
-
-    // Handle Next button click
-    nextButton.addEventListener("click", () => {
-        if (currentQuestionIndex < questions.length - 1) {
-            currentQuestionIndex++;
-            showQuestion(currentQuestionIndex);
-        } else {
-            questionsSection.classList.add('hidden');
-
-            for (let q of questions) {
-                if (!q.classList.contains("hidden")) {
-                q.classList.add("hidden");
-                };
-            };
-
-            resultsSection.classList.remove('hidden');
+    resultsSection.classList.remove('hidden');
             
-            setTimeout(() => {
-                resultsSection.classList.add("hidden");
-                readySection.classList.remove("hidden");
-                headerTitle.style.display = "none";
-                headerTitleReady.classList.remove("hidden");
-            }, 2000); 
+    setTimeout(() => {
+        resultsSection.classList.add("hidden");
+        readySection.classList.remove("hidden");
+        headerTitle.style.display = "none";
+        headerTitleReady.classList.remove("hidden");
+    }, 2000); 
 
-            startCountdown();}
-    });
-
-    // Attach event listeners to each question
-    questions.forEach((question, index) => {
-        const radioInputs = question.querySelectorAll("input[type='radio']");
-        const colorOptions = question.querySelectorAll(".color__var");
-        const numberOptions = question.querySelectorAll(".choice-button");
-
-        // Behavior for radio buttons
-        if (radioInputs.length > 0) {
-            radioInputs.forEach((radio) => {
-                radio.addEventListener("change", () => {
-                    // Remove "choosed" class from all labels
-                    question.querySelectorAll(".question__label").forEach((label) => {
-                        label.classList.remove("choosed");
-                    });
-
-                    // Add "choosed" class to the selected label
-                    const label = radio.closest(".question__label");
-                    label.classList.add("choosed");
-
-                    // Activate Next button
-                    nextButton.classList.add("active-btn");
-                    nextButton.disabled = false;
-                });
-            });
-        }
-
-        // Behavior for color squares
-        if (colorOptions.length > 0) {
-            colorOptions.forEach((color) => {
-                color.addEventListener("click", () => {
-                    // Remove "selected" class from other squares
-                    colorOptions.forEach((opt) => opt.classList.remove("selected"));
-                    // Add "selected" class to the clicked square
-                    color.classList.add("selected");
-
-                    // Activate Next button
-                    nextButton.classList.add("active-btn");
-                    nextButton.disabled = false;
-                });
-            });
-        }
-
-        // Behavior for number options
-        if (numberOptions.length > 0) {
-            numberOptions.forEach((number) => {
-                number.addEventListener("click", () => {
-                    // Remove "picked" class from other buttons
-                    numberOptions.forEach((opt) => opt.classList.remove("picked"));
-                    // Add "picked" class to the clicked button
-                    number.classList.add("picked");
-
-                    // Activate Next button
-                    nextButton.classList.add("active-btn");
-                    nextButton.disabled = false;
-                });
-            });
-        }
-    });
-
-    // Show the first question on load
-    showQuestion(currentQuestionIndex);
+    startCountdown();}
 });
+
+
+// Behavior for radio buttons
+const updateRadios = (question) => {
+    question.addEventListener('change', event => {
+        const radio = event.target.closest("input[type='radio']");
+        if (!radio) return;
+    
+    question.querySelectorAll(".question__label").forEach((label) => {
+        label.classList.remove("choosed");
+    });
+
+    // Add "choosed" class to the selected label
+    const label = radio.closest(".question__label");
+    label.classList.add("choosed");
+    
+    // Activate Next button
+    nextButton.classList.add("active-btn");
+    nextButton.disabled = false;
+    });
+}
+
+// Behavior for color squares
+const updateColorOptions = (question) => {
+    question.addEventListener('click', event => {
+        const colorOption = event.target.closest(".color__var");
+        if (!colorOption) return;
+        
+        // Remove "selected" class from other squares
+        const colorOptions = question.querySelectorAll(".color__var");
+        colorOptions.forEach(color => color.classList.remove("selected"));
+        
+        // Add "selected" class to the clicked square
+        colorOption.classList.add("selected");
+
+        // Activate Next button
+        nextButton.classList.add("active-btn");
+        nextButton.disabled = false;
+    });
+}
+
+// Behavior for number options
+const updateNumberOptions = (numberOptions = []) => {
+    numberOptions.forEach((number) => {
+        number.addEventListener("click", () => {
+            // Remove "picked" class from other buttons
+            numberOptions.forEach((opt) => opt.classList.remove("picked"));
+            // Add "picked" class to the clicked button
+            number.classList.add("picked");
+
+            // Activate Next button
+            nextButton.classList.add("active-btn");
+            nextButton.disabled = false;
+        });
+    });
+};
+
+// Attach event listeners to each question
+questions.forEach((question, index) => {
+    const numberOptions = question.querySelectorAll(".choice-button");
+
+    updateRadios(question);
+    updateColorOptions(question);
+    updateNumberOptions(numberOptions);
+});
+
+// Show the first question on load
+showQuestion(currentQuestionIndex);
 
 
 /* =======================
