@@ -75,8 +75,10 @@ menuLinks.forEach(link => {
 
 
 
+/*=======================
+    Go back to main
+=========================*/
 
-// Go back to main
 linksToMainPage = [headerTitle, headerTitleReady, logo, menuMain];
 
 linksToMainPage.forEach(link => {
@@ -103,7 +105,34 @@ linksToMainPage.forEach(link => {
 });
 
 
-// Start test 
+/* =================
+    Fixed header
+=================== */
+
+const header = document.getElementById("header");
+    const intro = document.getElementById("intro");
+    const introH = intro ? intro.offsetHeight : 0;
+
+    const checkScroll = (scrollOffset) => {
+        if (scrollOffset >= introH) {
+            header.classList.add("fixed");
+        } else {
+            header.classList.remove("fixed");
+        }
+    };
+
+    let scrollOffset = window.pageYOffset;
+    checkScroll(scrollOffset);
+
+    window.addEventListener("scroll", () => {
+        scrollOffset = window.pageYOffset;
+        checkScroll(scrollOffset);
+    });
+
+/* ================
+    Start test 
+================= */
+
 const startTestButtons = document.querySelectorAll(".btn__begin-test, #menu-begin-test");
 
 startTestButtons.forEach(button => {
@@ -119,7 +148,9 @@ startTestButtons.forEach(button => {
     }
 });
 
-// Next button
+/*===================
+    Questions and Next button 
+ ==================== */
 const progressWidths = [
     "6.15%", "9.6%", "13.85%", "29.2%", "35.76%", 
     "39.6%", "49.2%", "55.7%", "57.6%", "65.76%", "74.6%"
