@@ -988,6 +988,24 @@ h1, h2, h3, h4, h5, h6, p {
     background-size: cover;
     min-height: 100dvh;
     padding-top: 46px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.ready::before {
+    content: url(images/lightning.png);
+    position: absolute;
+    top: 36%;
+    left: -70%;
+    transform: scale(0.5) rotate(-49deg);
+}
+
+.ready::after {
+    content: url(images/lightning.png);
+    position: absolute;
+    bottom: -6%;
+    right: -79%;
+    transform: scale(0.5) rotate(-49deg);
 }
 
 .header__title_ready {
@@ -1087,7 +1105,11 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: rgba(235, 27, 0, 1);
     border-radius: 5px;
     border: none;
+    position: relative;
+    z-index: 1;
 }
+
+
 
 .call-btn__icon {
     width: 29px;
@@ -1307,6 +1329,14 @@ h1, h2, h3, h4, h5, h6, p {
         width: 0%;
         height: 16px;
         border-radius: 12.5px;
+    }
+
+    .ready::before {
+        left: -40%;
+    }
+
+    .ready::after {
+        right: -47%;
     }
 }
 
@@ -1550,6 +1580,16 @@ h1, h2, h3, h4, h5, h6, p {
         min-height: 100vh;
     }
 
+    .ready::before {
+        top: 34%;
+        left: -21%;
+    }
+    
+    .ready::after {
+        bottom: 24%;
+        right: -29%;
+    }
+
     .results-processing__comment {
         margin: 30px auto 0;
         font-size: 20px;
@@ -1610,6 +1650,7 @@ h1, h2, h3, h4, h5, h6, p {
         height: 105px;
         border-radius: 10px;
     }
+    
 
     .call-btn__icon {
         width: 35px;
@@ -1902,6 +1943,18 @@ h1, h2, h3, h4, h5, h6, p {
         padding-top: 80px;
     }
 
+    .ready::before {
+        top: 41%;
+        left: 15%;
+        transform: scale(0.5) rotate(-61deg);
+    }
+    
+    .ready::after {
+        bottom: 4%;
+        right: 13%;
+        transform: scale(0.5) rotate(270deg);
+    }
+
     .ready__title {
         font-size: 22px;
         line-height: 23px;
@@ -2110,6 +2163,16 @@ h1, h2, h3, h4, h5, h6, p {
         margin-bottom: 40px;
     }
 
+    .ready::before {
+        top: 36%;
+        left: 20%;
+    }
+    
+    .ready::after {
+        bottom: 21%;
+        right: 18%;
+    }
+
     .ready__title {
         font-size: 24px;
         line-height: 25px;
@@ -2265,6 +2328,14 @@ h1, h2, h3, h4, h5, h6, p {
         line-height: 20px;
     }
 
+    .ready::before {
+        left: 26%;
+    }
+    
+    .ready::after {
+        right: 24%;
+    }
+
 
 }
 
@@ -2389,6 +2460,16 @@ h1, h2, h3, h4, h5, h6, p {
 
     .question__title {
         font-size: 28px;
+    }
+
+    .ready::before {
+        top: 35%;
+        left: 30%;
+    }
+
+    .ready::after {
+        bottom: 25%;
+        right: 28%;
     }
 }
 
