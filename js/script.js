@@ -87,9 +87,43 @@ linksToMainPage.forEach(link => {
             q.classList.add("hidden");
         }
 
-        mainSection.classList.remove("hidden");});
+        mainSection.classList.remove("hidden");
+        resetTest();
+        resetCountdown()
+    });
 });
 
+
+/*=====================
+Reset test data
+=====================*/
+
+const resetTest = () => {
+    questions.forEach((question) => {
+        question.classList.add("hidden");
+
+        const radios = question.querySelectorAll("input[type='radio']");
+        radios.forEach((radio) => (radio.checked = false));
+
+        question.querySelectorAll(".question__label").forEach((label) => {
+            label.classList.remove("choosed");
+        });
+
+        question.querySelectorAll(".color__var").forEach((color) => {
+            color.classList.remove("selected");
+        });
+
+        question.querySelectorAll(".choice-button").forEach((button) => {
+            button.classList.remove("picked");
+        });
+    });
+
+    currentQuestionIndex = 0;
+
+    progressBar.style.width = "0%";
+
+    showQuestion(currentQuestionIndex);
+};
 
 /* =================
     Fixed header
@@ -242,7 +276,7 @@ const updateNumberOptions = (question) => {
 };
 
 // Attach event listeners to each question
-questions.forEach((question, index) => {
+questions.forEach((question) => {
     updateRadios(question);
     updateColorOptions(question);
     updateNumberOptions(question);
@@ -255,13 +289,18 @@ showQuestion(currentQuestionIndex);
 /* =======================
         Timer 
 ==========================*/
+let countdownInterval = null;
 const callPeriod = document.querySelector('.call__period');
 const callButton = document.querySelector('.call-btn');
 
 function startCountdown() {
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+    }
+
     let [minutes, seconds] = callPeriod.textContent.split(':').map(Number);
 
-    const countdownInterval = setInterval(() => {
+    countdownInterval = setInterval(() => {
         seconds--;
 
         if (seconds < 0) {
@@ -282,6 +321,16 @@ function startCountdown() {
 
         callPeriod.textContent = `${formattedMinutes}:${formattedSeconds}`;
     }, 1000);
+}
+
+function resetCountdown() {
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+        countdownInterval = null;
+    }
+
+    callPeriod.textContent = "10:00";
+    callButton.disabled = false;
 }
 
 
