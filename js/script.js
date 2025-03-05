@@ -222,28 +222,30 @@ const updateColorOptions = (question) => {
 }
 
 // Behavior for number options
-const updateNumberOptions = (numberOptions = []) => {
-    numberOptions.forEach((number) => {
-        number.addEventListener("click", () => {
-            // Remove "picked" class from other buttons
-            numberOptions.forEach((opt) => opt.classList.remove("picked"));
-            // Add "picked" class to the clicked button
-            number.classList.add("picked");
+const updateNumberOptions = (question) => {
 
-            // Activate Next button
-            nextButton.classList.add("active-btn");
-            nextButton.disabled = false;
+    question.addEventListener('click', event => {
+        const numberOption = event.target.closest(".choice-button");
+        if (!numberOption) return;
+
+        // Remove "picked" class from other buttons
+        const numberOptions = question.querySelectorAll(".choice-button");
+        numberOptions.forEach((num) => num.classList.remove("picked"));
+
+        // Add "picked" class to the clicked button
+        numberOption.classList.add("picked");
+
+        // Activate Next button
+        nextButton.classList.add("active-btn");
+        nextButton.disabled = false;
         });
-    });
 };
 
 // Attach event listeners to each question
 questions.forEach((question, index) => {
-    const numberOptions = question.querySelectorAll(".choice-button");
-
     updateRadios(question);
     updateColorOptions(question);
-    updateNumberOptions(numberOptions);
+    updateNumberOptions(question);
 });
 
 // Show the first question on load

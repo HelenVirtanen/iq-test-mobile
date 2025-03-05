@@ -287,6 +287,11 @@ h1, h2, h3, h4, h5, h6, p {
     color: #0D0C11;
     border-radius: 20px;
     border: none;
+    transition: all .2s linear;
+}
+
+.btn__begin-test:hover {
+    transform: scale(1.05);
 }
 
 
@@ -438,7 +443,6 @@ h1, h2, h3, h4, h5, h6, p {
     border: 1px solid #fff;
     color: #fff;
     margin-bottom: 45px;
-    transition: border-color .1s linear, color .1s linear;
 }
 
 .btn__begin-test_transparent:hover {
@@ -1336,10 +1340,6 @@ h1, h2, h3, h4, h5, h6, p {
         justify-content: space-between;
     }
 
-    .menu__item {
-        margin: 0 40px 0 0;
-    }
-
     .menu__item:last-child {
         margin-right: 10px;
     }
@@ -1408,11 +1408,13 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .questions {
+        height: 100vh;
         padding-top: 64px;
     }
 
     .questions .container {
         justify-content: flex-start;
+        height: 100vh;
     }
 
     .question__form {
@@ -1546,6 +1548,7 @@ h1, h2, h3, h4, h5, h6, p {
     .results-processing,
     .ready {
         padding-top: 64px;
+        min-height: 100vh;
     }
 
     .results-processing__comment {
@@ -1799,7 +1802,7 @@ h1, h2, h3, h4, h5, h6, p {
     
 
     .timing {
-        min-height: 660px;
+        min-height: 665px;
     }
 
     .timing__content {
@@ -2012,7 +2015,9 @@ h1, h2, h3, h4, h5, h6, p {
 
     .questions .container {
         max-width: 800px;
+        justify-content: stretch;
     }
+
 
     .progress {
         height: 20px;
@@ -2094,6 +2099,7 @@ h1, h2, h3, h4, h5, h6, p {
         font-size: 24px;
         line-height: 25px;
         letter-spacing: 2.2px;
+        padding-top: 150px;
     }
 
     .ready__content {
@@ -2143,10 +2149,17 @@ h1, h2, h3, h4, h5, h6, p {
         border-radius: 15px;
     }
 
+    .call-btn__text {
+        margin-right: 23px;
+        font-size: 20px;
+        line-height: 24.58px;
+        letter-spacing: 1px;
+    }
+
     .call-btn__icon {
         width: 40px;
         height: 40px;
-        margin-left: 25px;
+        margin-left: 22px;
         margin-right: 22px;
     }
 
@@ -2277,7 +2290,7 @@ h1, h2, h3, h4, h5, h6, p {
     .intro__test-title {
         font-size: 64px;
         line-height: 67.65px;
-        margin-bottom: 360px;
+        margin-bottom: 365px;
         padding: 0 100px;
         letter-spacing: 1.38px;
     }
