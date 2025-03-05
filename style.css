@@ -503,7 +503,7 @@ h1, h2, h3, h4, h5, h6, p {
 .questions .container {
     padding: 0;
     width: 100%;
-    min-height: 100dvh;
+    min-height: calc(100dvh - 46px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1412,7 +1412,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     .questions .container {
         justify-content: flex-start;
-        min-height: 100vh;
+        min-height: calc(100vh - 64px);
     }
 
     .question__form {
@@ -1744,6 +1744,11 @@ h1, h2, h3, h4, h5, h6, p {
         width: 50%;
     }
 
+    .benefits,
+    .description {
+        min-height: calc(100vh - 64px);
+    }
+
     .description__content {
         font-size: 22px;
         letter-spacing: 1.1px;
@@ -1800,7 +1805,7 @@ h1, h2, h3, h4, h5, h6, p {
     
 
     .timing {
-        min-height: 665px;
+        min-height: calc(100vh - 80px);
     }
 
     .timing__content {
@@ -1821,12 +1826,17 @@ h1, h2, h3, h4, h5, h6, p {
         margin-bottom: 50px;
     }
 
+    .btn__begin-test_transparent {
+        margin-bottom: 200px;
+    }
+
     .questions {
         padding-top: 80px;
     }
 
     .questions .container {
         max-width: 700px;
+        min-height: calc(100vh - 80px);
     }
 
     .question__next-btn {
@@ -1851,7 +1861,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     .progress { 
         height: 16px;
-        margin: 25px auto 25px;
+        margin: 25px auto 40px;
     }
 
     .progress-bar {
@@ -1959,6 +1969,7 @@ h1, h2, h3, h4, h5, h6, p {
         background: url(images/big-brain.png) 48% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
         background-color: #181818;
         background-size: 35%, 100%;
+        min-height: calc(100vh - 80px);
     }
 
     .intro__offering {
@@ -1982,6 +1993,11 @@ h1, h2, h3, h4, h5, h6, p {
         letter-spacing: 2.2px;
         width: 75%;
         line-height: 28px;
+    }
+
+    .benefits,
+    .description {
+        min-height: calc(100vh - 80px);
     }
 
     .benefits__content {
