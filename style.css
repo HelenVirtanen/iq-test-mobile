@@ -448,6 +448,7 @@ h1, h2, h3, h4, h5, h6, p {
 .btn__begin-test_transparent:hover {
     border-color: #F4CE0C;
     color: #F4CE0C;
+    transform: scale(1.05);
 }
 
 .timing__footer {
