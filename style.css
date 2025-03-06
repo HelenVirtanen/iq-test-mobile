@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5, h6, p {
 /* Intro */
 .intro {
     width: 100%;
-    min-height: calc(100dvh - 46px);
+    min-height: 523px;
     background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
     margin: 0 auto;
