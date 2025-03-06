@@ -200,9 +200,10 @@ const updateProgress = (index) => {
 };
 
 window.addEventListener("keydown", (event) => {
-    if ((event.key === "Backspace" || event.key === "Escape") && currentQuestionIndex > 0) {
+    if (event.key === "Backspace" && currentQuestionIndex > 0) {
         currentQuestionIndex--;
         showQuestion(currentQuestionIndex);
+        event.preventDefault();
     }
 });
 
