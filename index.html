@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="header__inner">
                     <button class="burger" id="burger-btn">
-                        <img src="images/menu.png" alt="Бургер-меню" width="24" height="16">
+                        <img class="burger-img" src="images/menu.png" alt="Бургер-меню">
                     </button>
                     <div class="logo">
                         <a class="logo__link" href="#main-screen">
@@ -27,11 +27,13 @@
                     <nav class="menu hidden" id="menu">
                         <ul class="menu__list">
                             <li class="menu__item"><a href="#main-screen" id="menu-item-main">Главная</a></li>
-                            <li class="menu__item"><a href="#description">Информация о тесте</a></li>
+                            <li class="menu__item"><a href="#about-test" id="menu-item-info">Информация о тесте</a></li>
                             <li class="menu__item"><a href="#timing">Пройти тест</a></li>
                         </ul>
                     </nav>
-                    <button class="close hidden" id="close-btn">✕</button>
+                    <button class="close hidden" id="close-btn">
+                        <img class="close-img" src="images/closeBtn.png" alt="Закрыть меню">
+                    </button>
                 </div>
             </div><!-- /.container -->
     </header>
@@ -71,7 +73,7 @@
 
     <!-- About test --> 
     
-    <section class="about__test">
+    <section class="about__test" id="about-test">
         <!-- Description -->
         <article class="description" id="description">
             <div class="container">
@@ -420,11 +422,10 @@
             <p class="call-btn__text">Позвонить и прослушать результат</p>
     </button>
     <div id="api-response-container"></div>
-
-    <div class="ready__footer">
-        TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI
-    </div>
     </div> <!-- /.container -->
+    <footer class="ready__footer">
+        TERMENI SI CONDITII: ACESTA ESTE UN SERVICIU DE DIVERTISMENT. PRIN FOLOSIREA LUI DECLARATI CA AVETI 18 ANI IMPLINITI
+    </footer>
 </section>
 
 <script src="js/script.js"></script>

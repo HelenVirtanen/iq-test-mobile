@@ -1,5 +1,6 @@
 // Buttons 
 const burgerBtn = document.getElementById('burger-btn');
+const burgerImg = document.querySelector(".burger-img");
 const closeBtn = document.getElementById('close-btn');
 
 // Header
@@ -12,10 +13,12 @@ const headerTitleReady = document.querySelector(".header__title_ready");
 const menu = document.querySelector('.menu');
 const menuList = document.querySelector('.menu__list');
 const menuMain = document.querySelector("#menu-item-main");
+const menuInfo = document.querySelector("#menu-item-info");
 
 // Sections
 const mainSection = document.getElementById("main-screen");
 const introSection = document.getElementById("intro");
+const description = document.getElementById("description");
 const questionsSection= document.querySelector(".questions");
 const question1 = document.getElementById("question-1");
 const questions = document.querySelectorAll(".question");
@@ -29,6 +32,7 @@ const readySection = document.querySelector(".ready");
 
 const toggleButtons = (isMenuOpen) => {
     burgerBtn.classList.toggle('hidden', isMenuOpen);
+    burgerImg.classList.toggle('hidden', isMenuOpen);
     closeBtn.classList.toggle('hidden', !isMenuOpen);
 };
 
@@ -36,6 +40,7 @@ const toggleButtons = (isMenuOpen) => {
 burgerBtn.addEventListener('click', () => {
     menu.classList.remove('hidden');
     headerTitle.classList.add('hidden');
+    menu.style.height = `${introH}px`;
 
     const isVisible = logo.style.opacity === 1;
     logo.classList.toggle('hidden', isVisible);
@@ -59,12 +64,15 @@ menu.addEventListener("click", (e) => {
 
     if (link === menuMain) {
         e.preventDefault();
-        mainSection.classList.remove("hidden");
-        questionsSection.classList.add("hidden");
     }
+
+    mainSection.classList.remove("hidden");
+    questionsSection.classList.add("hidden");
 
     menu.classList.add("hidden");
     toggleButtons(false);
+    resetTest();
+    resetCountdown();
 });
 
 /*=======================
@@ -187,7 +195,7 @@ const showQuestion = (index) => {
 };
 
 const updateProgress = (index) => {
-    const progress = ((index + 1) / questions.length) * 100;
+    const progress = ((index + 1) / (questions.length)) * 100;
     progressBar.style.width = `${progress}%`;
 };
 

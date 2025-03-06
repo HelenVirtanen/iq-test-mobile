@@ -126,9 +126,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .burger img {
-    width: 100%;
+    width: 24px;
     height: auto;
-    display: block;
 }
 
 
@@ -143,7 +142,7 @@ h1, h2, h3, h4, h5, h6, p {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;
     transition: all 0.3s ease;
-    min-height: 522px;
+    min-height: 523px;
 }
 
 .menu__list {
@@ -197,7 +196,6 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
     margin-left: auto;
-    font-size: 32px;
     color: #FFC700;
     background: none;
     cursor: pointer;
@@ -207,17 +205,25 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 
+.close-img {
+    width: 28px;
+    height: auto;
+    position: absolute;
+    top: 18px;
+    right: 13px;
+}
+
 /* Intro */
 .intro {
     width: 100%;
-    min-height: 523px;
+    min-height: calc(100dvh - 46px);
     background: url(images/brain-bcg.jpg) no-repeat;
     background-size: cover;
     margin: 0 auto;
 }
 
 .intro__inner {
-    margin-top: 45px;
+    margin-top: 46px;
     padding: 27px 0 11px;
     text-align: center;
 }
@@ -1151,12 +1157,14 @@ h1, h2, h3, h4, h5, h6, p {
     justify-content: center;
     padding: 20px 0;
     font-family: 'PT Serif';
+    position: relative;
+    z-index: 10;
 }
 
 #api-response-container > table {
     width: 95%;
+    background-color: #0d0c11;
 }
-
 
 
 /* Adaptive */
@@ -1435,6 +1443,10 @@ h1, h2, h3, h4, h5, h6, p {
 
     .timing {
         min-height: 0;
+    }
+
+    .timing::after {
+        bottom: 15%;
     }
 
     .questions {
@@ -1719,6 +1731,7 @@ h1, h2, h3, h4, h5, h6, p {
         background: url(images/big-brain.png) 48% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
         background-color: #181818;
         background-size: 30%, 100%;
+        min-height: calc(100dvh - 80px);
     }
 
     .intro__offering {
@@ -1848,6 +1861,10 @@ h1, h2, h3, h4, h5, h6, p {
 
     .timing {
         min-height: calc(100vh - 80px);
+    }
+
+    .timing::after {
+        bottom: 53%;
     }
 
     .timing__content {
@@ -2023,7 +2040,6 @@ h1, h2, h3, h4, h5, h6, p {
         background: url(images/big-brain.png) 48% 40% no-repeat, url(images/dark-sky.jpg) 50% 30% no-repeat;
         background-color: #181818;
         background-size: 35%, 100%;
-        min-height: calc(100vh - 80px);
     }
 
     .intro__offering {
