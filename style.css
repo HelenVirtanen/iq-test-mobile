@@ -300,6 +300,10 @@ h1, h2, h3, h4, h5, h6, p {
     box-shadow: 2px 2px 15px rgb(13 12 17 / 60%);
 }
 
+.intro .btn__begin-test:hover {
+    transform: scale(1.05);
+}
+
 
 /* Show more arrow */
 .circle {
@@ -655,6 +659,15 @@ h1, h2, h3, h4, h5, h6, p {
     border: none;
 }
 
+.question__label:hover {
+    color: #F4CE0C;
+}
+
+.question__label.choosed {
+    background-color: rgba(255, 199, 0, 1);
+    color:rgb(13, 12, 17);
+}
+
 .question-10 .question__label:last-child {
     font-size: 16px;
 }
@@ -664,9 +677,10 @@ h1, h2, h3, h4, h5, h6, p {
     margin-right: 39px; 
 }
 
-.question__label.choosed {
-    background-color: rgba(255, 199, 0, 1);
-    color:rgb(13, 12, 17);
+.question__radio:checked + .custom__label::before,
+.question__radio:hover + .custom__label::before {
+    background-color: rgba(41, 80, 194, 1);
+    border-color: rgba(39, 39, 39, 1);
 }
 
 .custom__label {
@@ -714,7 +728,7 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: transparent;
     margin-right: 30px;
     flex-shrink: 0;
-    transition: background-color 200ms ease-in;
+    transition: background-color 200ms ease-in, border-color 0.3s ease;
 }
 .question-9 .custom__label::before {
     margin-right: 15px;
@@ -722,11 +736,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .question-10 .custom__label::before {
     margin-right: 28px;
-}
-
-.question__radio:checked + .custom__label::before {
-    background-color: rgba(41, 80, 194, 1);
-    border-color: rgba(39, 39, 39, 1);
 }
 
 .question__next-btn {
@@ -785,14 +794,14 @@ h1, h2, h3, h4, h5, h6, p {
     width: 75px;
     height: 75px;
     background-color: rgb(168, 168, 168);
-    transition: outline 0.1s linear;
+    transition: outline .2s linear;
 }
 
-.color__var.selected {
+.color__var.selected,
+.color__var:hover {
     outline: 6px solid rgba(255, 199, 0, 1);
     outline-offset: -3px;
 }
-
 
 .color__var.blue {
     background-color: rgb(0, 0, 169);
@@ -880,9 +889,11 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 400;
     font-size: 20px;
     color: rgba(13, 12, 17, 1);
+    transition: outline .1s linear;
 }
 
-.choice-button.picked{
+.choice-button.picked,
+.choice-button:hover {
     outline: 6px solid rgba(255, 199, 0, 1);
     outline-offset: -6px;
 }
@@ -1961,15 +1972,11 @@ h1, h2, h3, h4, h5, h6, p {
     }
 
     .ready::before {
-        top: 41%;
-        left: 15%;
-        transform: scale(0.5) rotate(-61deg);
+        display: none;
     }
     
     .ready::after {
-        bottom: 4%;
-        right: 13%;
-        transform: scale(0.5) rotate(270deg);
+        display: none;
     }
 
     .ready__title {
