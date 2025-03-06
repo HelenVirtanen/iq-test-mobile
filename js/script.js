@@ -199,6 +199,13 @@ const updateProgress = (index) => {
     progressBar.style.width = `${progress}%`;
 };
 
+window.addEventListener("keydown", (event) => {
+    if ((event.key === "Backspace" || event.key === "Escape") && currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+    }
+});
+
 // Handle Next button click
 nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < questions.length - 1) {
