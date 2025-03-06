@@ -417,8 +417,3 @@ document.getElementById('call-btn').addEventListener('click', async () => {
         container.innerHTML = `<p style="color: red;">Произошла ошибка: ${error.message}</p>`;
     }
 });
-
-
-
-
-
