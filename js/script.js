@@ -62,10 +62,6 @@ menu.addEventListener("click", (e) => {
     const link = e.target.closest("a");
     if (!link) return;
 
-    if (link === menuMain) {
-        e.preventDefault();
-    }
-
     mainSection.classList.remove("hidden");
     questionsSection.classList.add("hidden");
 
