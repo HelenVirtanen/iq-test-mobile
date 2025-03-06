@@ -661,6 +661,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .question__label:hover {
     color: #F4CE0C;
+    background-color: rgb(242, 243, 243, 0.4);
 }
 
 .question__label.choosed {
@@ -889,7 +890,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-weight: 400;
     font-size: 20px;
     color: rgba(13, 12, 17, 1);
-    transition: outline .1s linear;
+    transition: outline .2s linear;
 }
 
 .choice-button.picked,
@@ -1175,6 +1176,38 @@ h1, h2, h3, h4, h5, h6, p {
 #api-response-container > table {
     width: 95%;
     background-color: #0d0c11;
+}
+
+.character-header {
+    text-align: center;
+    color: #F4CE0C;
+}
+
+.character-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px auto;
+}
+
+.character-table thead tr {
+    background-color: #181818;
+    color: #F4CE0C;
+    text-align: center;
+}
+
+.character-table th,
+.character-table td {
+    padding: 8px;
+    border: 1px solid #F4CE0C;
+}
+
+.character-table td {
+    padding-left: 16px;
+    font-size: 16px;
+}
+
+.character-value {
+    color: #3bde7c;
 }
 
 

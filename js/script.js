@@ -56,46 +56,50 @@ closeBtn.addEventListener('click', () => {
 });
 
 
-// Open menu links
+/*===================================
+    Click menu links and close sections
+=====================================*/
 
+// Hide sections
+const hideSections = (sections) => {
+    sections.forEach(section => section.classList.add("hidden"));
+};
+
+// Hide questions
+const hideQuestions = () => {
+    questions.forEach(q => q.classList.add("hidden"));
+};
+
+// Open menu links
 menu.addEventListener("click", (e) => {
     const link = e.target.closest("a");
     if (!link) return;
 
+    hideSections([questionsSection]);
     mainSection.classList.remove("hidden");
-    questionsSection.classList.add("hidden");
-
     menu.classList.add("hidden");
-    toggleButtons(false);
     resetTest();
     resetCountdown();
+    toggleButtons(false);
 });
 
 /*=======================
     Go back to main
 =========================*/
 
-linksToMainPage = [headerTitle, headerTitleReady, logo, menuMain];
+const linksToMainPage = [headerTitle, headerTitleReady, logo, menuMain];
+const sectionsToHide = [questionsSection, readySection, resultsSection, headerTitleReady];
 
 linksToMainPage.forEach(link => {
     link.addEventListener("click", () => {
-        let sectionsToHide = [  
-                                questionsSection, readySection, resultsSection, headerTitleReady
-                            ];
-
-        for (let s of sectionsToHide) {
-            s.classList.add("hidden");
-        }
-
-        for (let q of questions) {
-            q.classList.add("hidden");
-        }
-
+        hideSections(sectionsToHide);
+        hideQuestions();
         mainSection.classList.remove("hidden");
         resetTest();
-        resetCountdown()
+        resetCountdown();
     });
 });
+
 
 
 /*=====================
@@ -145,11 +149,11 @@ const header = document.getElementById("header");
         }
     };
 
-    let scrollOffset = window.pageYOffset;
+    let scrollOffset = window.scrollY;
     checkScroll(scrollOffset);
 
     window.addEventListener("scroll", () => {
-        scrollOffset = window.pageYOffset;
+        scrollOffset = window.scrollY;
         checkScroll(scrollOffset);
     });
 
@@ -361,52 +365,54 @@ document.getElementById('call-btn').addEventListener('click', async () => {
 
         // Create HTML to show
         const formattedData = `
-            <h3 style="text-align: center; color: #F4CE0C;">Данные о персонаже:</h3>
-            <table style="width: 100%; border-collapse: collapse; margin: 10px auto;">
+            <h3 class="character-header">Данные о персонаже:</h3>
+            <table class="character-table">
                 <thead>
-                    <tr style="background-color: #181818; color: #F4CE0C; text-align: center;">
-                        <th style="padding: 8px; border: 1px solid #F4CE0C;">Свойство</th>
-                        <th style="padding: 8px; border: 1px solid #F4CE0C;">Значение</th>
+                    <tr>
+                        <th>Свойство</th>
+                        <th>Значение</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Имя</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.name}</td>
+                        <td>Имя</td>
+                        <td class="character-value">${data.name}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Рост</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.height} см</td>
+                        <td>Рост</td>
+                        <td class="character-value">${data.height} см</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Масса</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.mass} кг</td>
+                        <td>Масса</td>
+                        <td class="character-value">${data.mass} кг</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Цвет волос</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.hair_color}</td>
+                        <td>Цвет волос</td>
+                        <td class="character-value">${data.hair_color}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Цвет кожи</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.skin_color}</td>
+                        <td>Цвет кожи</td>
+                        <td class="character-value">${data.skin_color}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Цвет глаз</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.eye_color}</td>
+                        <td>Цвет глаз</td>
+                        <td class="character-value">${data.eye_color}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Год рождения</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.birth_year}</td>
+                        <td>Год рождения</td>
+                        <td class="character-value">${data.birth_year}</td>
                     </tr>
                     <tr>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px;">Пол</td>
-                        <td style="padding: 8px; padding-left: 16px; border: 1px solid #F4CE0C; font-size: 16px; color: #3bde7c;">${data.gender}</td>
+                        <td>Пол</td>
+                        <td class="character-value">${data.gender}</td>
                     </tr>
                 </tbody>
             </table>
-        `;
-        // Pull data to container
-        container.innerHTML = formattedData;
+            `;
+
+    // Add fetched data to container
+    container.innerHTML = formattedData;
+
     } catch (error) {
         container.innerHTML = `<p style="color: red;">Произошла ошибка: ${error.message}</p>`;
     }
